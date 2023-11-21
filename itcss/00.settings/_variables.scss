@@ -1,0 +1,180 @@
+﻿
+// VARIABLES
+
+// Prefijo para el proyecto
+
+// Todos los componentes deben empezar por este prefijo seguido de un guíon + nameComponente.
+$prefix: '.icp'; // Ejemplo: .icp o .cliente
+
+// Desde aquí controlamos la fuente del proyecto
+$font-family: 'Roboto';
+/*$font-size-main: 0.875rem;*/
+$font-size-main: 1rem; //Cambio para DS Preoduccion
+
+
+// Variables de colores.
+// Lo usaremos para las variables de colores o dentro de cada componente.
+$colors: (
+// Primary
+"primary1" : #3176AE, "primary2" : #464E58, "primary3" : #22262B,
+// Secondary
+"secondary1" : #EBF3FF, "secondary2" : #FAFAFA, "secondary3" : #D1DBE6,
+// States
+"disabled1" : #589AD0, "hover1" : #2C699C, "selected1" : #344859, "disabled2" : #8F9499, "hover2" : #5D6166, "selected2" : #3C3F42, "disabled3": #DEE2E6,
+// Complementary
+"comp1" : #F5F6F8, "comp2" : #F6F6F6, "comp3" : #DEE2E6, "comp4" : #436187, "accent" : #F1B033,
+// Semantic
+// Warning
+"warning-error" : #E22014, "disabled-error" : #F06158, "hover-error" : #C41B12, "selected-error" : #7D110B,
+// Notice
+"notice" : #D57C15, "disabled-notice" : #BF8A4D, "hover-notice" : #B56A12, "selected-notice": #74440C,
+// Success
+"success" : #268245, "disabled-success" : #57936B, "hover-success" : #174F2A, "selected-success" : #183F2B,
+// Success 2
+"success2" : #93E4BA, "slot": #1CFFD6,
+// Information
+"info" : #70D1E9,
+// Pastel
+"pastel1" : #FFF5DB, "pastel2" : #FFEFB8, "pastel3" : #FFD6C0, "pastel4" : #FBD0D4, "pastel5": #F3E0EC, "pastel6": #E8E0FF, "pastel7": #D2CBEC, "pastel8": #D0F6FB, "pastel9":#CCE3FF,"pastel10":#DAF7DC,"pastel11":#CEE8E1, "pastel12": #D4E2D5, "pastel13": #F9BEC3,
+// Grey
+"grey100" : #FCFCFC, "grey200" : #F2F2F2, "grey300" : #DDDDDD, "grey400" : #BDBDBD, "grey500" : #999999, "grey600" : #707070, "grey700" : #545454, "grey800" : #424242, "grey900" : #1C1C1C,
+// Black and white
+"black" : #000, "white" : #FFF );
+
+// Variables colores del proyecto
+// Se pueden añadir o quitar las necesarias para el desarrollo
+$c-primary1: map-get($colors, "primary1");
+$c-primary2: map-get($colors, "primary2");
+$c-primary3: map-get($colors, "primary3");
+
+$c-secondary1: map-get($colors, "secondary1");
+$c-secondary2: map-get($colors, "secondary2");
+$c-secondary3: map-get($colors, "secondary3");
+
+$c-disabled1: map-get($colors,"disabled1");
+$c-selected1: map-get($colors, "selected1");
+$c-selected2: map-get($colors, "selected2");
+$c-disabled2: map-get($colors,"disabled2");
+$c-disabled3: map-get($colors,"disabled3");
+
+$c-notice: map-get($colors, "notice");
+$c-notice-hover: map-get($colors, "hover-notice");
+$c-notice-sel: map-get($colors, "selected-notice");
+$c-notice-dis: map-get($colors, "disabled-notice");
+
+$c-danger: map-get($colors, "warning-error");
+$c-danger-hover: map-get($colors, "hover-error");
+$c-danger-sel: map-get($colors, "selected-error");
+$c-danger-dis: map-get($colors, "disabled-error");
+
+$c-hover1: map-get($colors, "hover1");
+$c-hover2: map-get($colors, "hover2");
+$c-hover-error: map-get($colors, "hover-error");
+$c-disabled-error: map-get($colors, "disabled-error");
+$c-selected-error: map-get($colors, "selected-error");
+
+$c-comp1: map-get($colors, "comp1");
+$c-comp2: map-get($colors, "comp2");
+$c-comp3: map-get($colors, "comp3");
+$c-comp4: map-get($colors, "comp4");
+$c-comp5: map-get($colors, "comp5");
+$c-comp6: map-get($colors, "comp6");
+$c-comp7: map-get($colors, "comp7");
+$c-accent: map-get($colors, "accent");
+
+$c-grey-1: map-get($colors, "grey100");
+$c-grey-2: map-get($colors, "grey200");
+$c-grey-3: map-get($colors, "grey300");
+$c-grey-4: map-get($colors, "grey400");
+$c-grey-6: map-get($colors, "grey600");
+$c-grey-7: map-get($colors, "grey700");
+$c-grey-8: map-get($colors, "grey800");
+$c-grey-9: map-get($colors, "grey900");
+
+
+$c-pastel1: map-get($colors, "pastel1");
+$c-pastel2: map-get($colors, "pastel2");
+$c-pastel3: map-get($colors, "pastel3");
+$c-pastel4: map-get($colors, "pastel4");
+$c-pastel5: map-get($colors, "pastel5");
+$c-pastel6: map-get($colors, "pastel6");
+$c-pastel7: map-get($colors, "pastel7");
+$c-pastel8: map-get($colors, "pastel8");
+$c-pastel9: map-get($colors, "pastel9");
+$c-pastel10: map-get($colors, "pastel10");
+$c-pastel11: map-get($colors, "pastel11");
+$c-pastel12: map-get($colors, "pastel12");
+$c-pastel13: map-get($colors, "pastel13");
+
+
+$c-white: map-get($colors, "white");
+$c-black: map-get($colors, "black");
+$c-slot: map-get($colors, "slot");
+
+
+$c-success: map-get($colors, "success");
+$c-success-hover: map-get($colors, "hover-success");
+$c-success-dis: map-get($colors, "disabled-success");
+$c-success-sel: map-get($colors, "selected-success");
+
+$c-info: map-get($colors, "info");
+$c-warning: map-get($colors, "notice");
+
+/* Puntos de ruptura para media-queries */
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+$bp-xxl: 1400px;
+
+//Mapa tamaños de fuentes solo para <p> o <span>
+
+$fontsize-map: ( "xxxs": 6, "xxs": 10, "xs": 12, "sm": 14, "md": 16, "lg": 18, "xl": 20, "xxl": 24, "xxxl": 96 ,); 
+
+
+$f-12: map-get($fontsize-map, "xs");
+$f-14: map-get($fontsize-map, "sm");
+$f-16: map-get($fontsize-map, "md");
+$f-22: map-get($fontsize-map, "xxl");
+$f-96: map-get($fontsize-map, "xxxl");
+
+
+// Mapa tamaños cabeceras
+$headings-map: ( "h1" : 40, "h2" : 32, "h3" : 28, "h4" : 24 );
+
+// Mapa grosor de textos
+$fontweight-map: ( "300": 300, "400": 400, "500": 500, "600": 600, "700": 700, "900": 900, );
+
+// Mapa de sombras
+$shadows: ( "high": 0 0 20px rgba(215, 215, 215, 0.8), "medium": 0 0 16px rgba(215, 215, 215, 0.6), "low": 0 0 12px rgba(215, 215, 215, 0.4), "box": 0 0 2px rgba(0, 0, 0, 0.14), "sidebar": 0 0 10px rgba(57, 57, 57, 0.3),
+// Nuevas sombras
+"xs" : 0px 1px 6px -1px rgba(28, 48, 74, 0.3), "s" : 0px 1px 6px -1px rgba(28, 48, 74, 0.3), "m" : 0px 1px 6px -1px rgba(28, 48, 74, 0.3), "l" : 0px 12px 38px -6px rgba(28, 50, 79, 0.3), "xl" : 0px 18px 42px -8px rgba(28, 50, 79, 0.34), "comp": 2px 2px 20px 6px rgba(90, 144, 141, 0.3), "comp2": 18px 21px 27px -1px rgba(90, 144, 141, 0.3),);
+
+// Variables sombras
+$s-box: map-get($shadows, "box");
+$shadow-active: map-get($shadows, "active");
+
+$shadow-xs: map-get($shadows, "xs");
+$shadow-s: map-get($shadows,"s");
+$shadow-m: map-get($shadows, "m");
+$shadow-l: map-get($shadows, "l");
+$shadow-xl: map-get($shadows, "xl");
+$shadow-comp: map-get($shadows, "comp");
+$shadow-comp2: map-get($shadows, "comp2");
+
+// Mapa para opacidades
+$opacity-map: ( 0: 0, 25: 25, 50: 5, 75: 75 );
+
+// Mapa para alinear textos
+$text-align-map: ( "center" : center, "start" : start, "end" : end, "left" : left, "right" : right, "justify" : justify, "justify-all" : justify-all );
+
+// Mapa para cursores
+$cursor-map: ( "default" : default, "pointer" : pointer, "help" : help, "progress" : progress, "wait" : wait, "none" : none, "text" : text, "copy" : copy, "cell" : cell, "move" : move, "not-allowed" : not-allowed, "col-resize" : col-resize, "e-resize" : e-resize, "grab": grab );
+
+// Mapa para posiciones
+$position-map: ( "absolute" : absolute, "relative" : relative, "fixed" : fixed, "sticky" : sticky, "inherit" : inherit, "static" : static, "initial" : initial );
+
+// Mapa arrangements
+$arrangement-map: ( "top" : top, "start" : left, "end" : right, "bottom" : bottom );
+
+$h-actions: 106px;

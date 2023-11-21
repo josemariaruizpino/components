@@ -1,0 +1,64 @@
+﻿
+.e-tag {
+    // Custom props:
+    --bd-color: #{$c-primary1};
+    --bg-color: #{$c-secondary1};
+    --val-color: #{$c-primary1};
+
+    @include setWidthAndHeight(100%, auto);
+    @include flex-align(center, space-between);
+    background-color: var(--bg-color);
+    border-radius: calcrem(2);
+    padding: calcrem(2) calcrem(6);
+
+    &__lab {
+        font-weight: 500;
+        font-size: calcrem(14);
+    }
+
+    &__val {
+
+        * {
+            color: var(--val-color);
+            font-weight: 600;
+            font-size: calcrem(16);
+        }
+    }
+    // Tipos y modificadores
+
+    &--outline {
+        --bg-color: #{$c-white};
+
+        @extend .e-tag;
+        border: calcrem(1) solid;
+        border-color: var(--bd-color);
+    }
+
+    &--underline {
+        --bd-border: 0;
+        --bg-color: transparent;
+        --bd-color: #{$c-secondary3};
+
+        @extend .e-tag;
+        border: 0;
+        border-bottom: calcrem(1) solid;
+        border-color: var(--bd-color);
+        border-radius: 0;
+    }
+
+    // Modificadores dinámicos
+    &.success {
+        --bg-color: #{$c-pastel11};
+        --val-color: #{$c-success};
+    }
+
+    &.error {
+        --bg-color: #{$c-pastel13};
+        --val-color: #{$c-danger};
+    }
+
+    &.info {
+        --bg-color: #{$c-pastel2};
+        --val-color: #{$c-notice};
+    }
+}

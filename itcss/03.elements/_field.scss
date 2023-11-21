@@ -1,0 +1,293 @@
+﻿
+
+.e-field {
+    /* Variables de e-field */
+    --label-size: 98px;
+    --field-height: 36px; //Modificacmos altura
+    --field-maxheight: 72px; //Consultar altura máxima input Produccion
+    --bg-field-disabled: #{$c-comp3};
+    --bd-color: #{$c-secondary3};
+    /*End Variables*/
+    height: var(--field-height);
+    font-size: calcrem(14); //cambiamos fuente para produccion
+    /*margin-top: calcrem(16);*/
+    display: flex;
+    align-items: center;
+    /*EditForm Styles*/
+
+    &__label {
+        align-items: center;
+        display: flex;
+        flex-direction: initial;
+        font-size: inherit;
+        font-weight: 500;
+        height: inherit;
+        justify-content: flex-start;
+        text-align: left;
+        width: var(--label-size);
+
+        @include xs-pda-device {
+            font-size: calcrem(18);
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        height: var(--field-height);
+        position: relative;
+        max-width: initial;
+        width: calc(100% - var(--label-size));
+
+        @include xs-pda-device {
+            --field-height: 38px;
+        } 
+    }
+    //Pisamos las clases de Telerik
+
+    .k {
+
+        &-button {
+            background: $c-white;
+            border-left: calcrem(1) solid var(--bd-color);
+            padding: 0 calcrem(4);
+        }
+
+        &-combobox {
+            width: calc(100% - var(--label-size));
+            height: inherit;
+
+            .k-button-solid-base {
+                background-color: transparent;
+            }
+        }
+
+        &-input {
+            max-height: var(--field-maxheight);
+            border-radius: calcrem(2);
+
+            &-solid {
+                border-color: var(--bd-color);
+            }
+
+            &-md, &-inner, &-value-text {
+                font-size: calcrem(14); //cambiamos fuente para Produccion
+            }
+            /*Estados*/
+            &.k-focus {
+                border-color: $c-primary1 !important;
+                box-shadow: none;
+            }
+
+            &:hover {
+                border-color: $c-hover2;
+            }
+
+            &.k-invalid {
+                border-color: $c-danger; //Añadimos la variable correcta
+            }
+
+            &-values {
+                overflow: auto;
+            }
+
+            &.k-disabled {
+                border-color: $c-secondary3;
+                background-color: var(--bg-field-disabled);
+            }
+        }
+
+        &-multiselect {
+            min-height: inherit;
+            height: var(--field-height); //Añado para que coja altura en producción
+            max-height: var(--field-maxheight);
+
+            & .k-chip {
+                display: flex;
+                flex-direction: row-reverse;
+
+
+                &-label {
+                    font-size: calcrem(12); //Cambio para DS Producción
+                    text-transform: capitalize;
+                    font-weight: 600;
+                }
+
+                &-solid-base {
+                    background-color: $c-white;
+                    border-color: var(--bd-color);
+                    border-radius: calcrem(50);
+                    color: $c-primary1;
+                    --height-input: calcrem(16);
+                }
+
+                &-content {
+                    --height-input: calcrem(16);
+                    padding: calcrem(3);
+                }
+
+                &-icon {
+
+                    &.k-i-x {
+                        font-size: calcrem(10);
+
+                        &:before {
+                            content: '\e94a';
+                        }
+                    }
+
+                    &-label {
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            .k-input-values {
+                overflow: auto;
+            }
+
+            .k-input-inner {
+                height: var(--field-height);
+            }
+        }
+
+        &-numerictextbox {
+            /*width: calc(100% - var(--label-size));*/
+            width: 100%;
+            height: inherit;
+
+            & .k-input-spinner .k-spinner-increase {
+                background-color: transparent;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            & .k-input-spinner .k-spinner-decrease {
+                background-color: transparent;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            .k-svg-icon {
+                font-size: calcrem(12);
+            }
+        }
+
+        &-picker {
+            &-solid {
+                background-color: $c-white;
+                border-radius: calcrem(2);
+                border-color: var(--bd-color);
+
+                &:hover {
+                    border-color: $c-hover2;
+                }
+
+                &:focus-within {
+                    border-color: $c-hover2;
+                }
+            }
+
+            .k-input-button {
+                border-color: var(--bd-color);
+            }
+        }
+        // TO DO: Revisar las alturas del text-area
+        &-textarea {
+            height: inherit;
+            line-height: 1;
+        }
+
+        &-radio {
+            border-color: $c-primary3;
+
+            &-item {
+                gap: calcrem(8);
+            }
+
+            &-label {
+                color: $c-primary3;
+                font-size: calcrem(14);
+            }
+
+            &-list, .k-list-horizontal, .k-list-vertical {
+                width: 100%;
+
+                > .k-disabled {
+                    opacity: 1 !important;
+
+                    .k-radio-label {
+                        color: $c-disabled2;
+                    }
+                }
+            }
+
+            &-md {
+                @include setWidthAndHeight(calcrem(16),calcrem(16));
+            }
+
+
+            &:hover {
+                border-color: $c-hover2;
+            }
+
+            &:active, &:checked {
+                border-color: $c-primary1;
+                background-color: $c-primary1;
+
+                &:disabled {
+                    opacity: initial;
+                    border-color: $c-disabled2;
+                    background-color: $c-disabled2;
+                }
+            }
+        }
+    }
+    //Fin de clases de Telerik
+    // Modificadores
+    // Mod OPT DS
+    &--opt {
+        --field-height: 40px;
+
+        &__read {
+            width: calcrem(53);
+
+            &--symbol {
+                font-size: calcrem(24);
+            }
+
+            .k-input {
+                &-inner {
+                    text-align: center;
+                }
+            }
+        }
+
+        .k {
+            &-input {
+                border-radius: calcrem(3);
+
+                &-inner {
+                    --fs-input: #{calcrem(24)};
+                    --fw-tag: 600;
+                    font-size: var(--fs-input);
+                    font-weight: var(--fw-tag);
+                }
+                /*Estados*/
+                &--error {
+                    border-color: $c-danger !important;
+                    box-shadow: none;
+                }
+
+                &.k-numerictextbox {
+                    .k-input-spinner {
+                        display: none;
+                    }
+                }
+            }
+
+            &-disabled {
+                opacity: inherit;
+            }
+        }
+    }
+}

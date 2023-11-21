@@ -1,0 +1,205 @@
+﻿//V: 2.0.2
+//Mod: 20/04/23
+
+@-webkit-keyframes slide-bottom {
+    0% {
+        height: 0;
+    }
+
+    50% {
+        height: 34%
+    }
+
+    100% {
+        height: 80%;
+    }
+}
+
+.c-nav {
+    @include xs-pda-device {
+        @include setWidthAndHeight();
+    }
+
+    .k {
+        &-panelbar,
+        &-group {
+            background-color: transparent;
+            border-color: $c-secondary3;
+            border-width: 0;
+
+            #tree-item-0 {
+                display: none;
+            }
+
+            &-header {
+                > .k-link {
+                    color: $c-primary2;
+                    cursor: pointer;
+                    gap: calcrem(16);
+                    font-weight: 500;
+                    padding: calcrem(10) calcrem(16);
+                    text-transform: initial;
+
+                    @include xs-pda-device {
+                        font-weight: 500;
+                        padding: calcrem(14) calcrem(16);
+                    }
+
+                    .k-icon,
+                    .k-panelbar-item-icon {
+                        bottom: calcrem(1);
+                        color: $c-primary2;
+                        font-size: calcrem(18);
+                        position: relative;
+                    }
+
+                    &.k-state-selected,
+                    &.k-selected {
+                        background-color: $c-secondary1;
+                        box-shadow: none;
+                        color: $c-primary1;
+
+
+                        &::before {
+                            -webkit-animation: slide-bottom 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                            animation: slide-bottom 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                            background: $c-primary1;
+                            border-radius: 0 calcrem(8) calcrem(8) 0;
+                            content: '';
+                            height: 80%;
+                            left: 0;
+                            position: absolute;
+                            width: calcrem(4);
+
+                            @include xs-pda-device {
+                                display: none;
+                            }
+                        }
+
+                        .k-icon {
+                            color: $c-primary1;
+                        }
+
+                        &:hover {
+                            background-color: $c-secondary1;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: $c-secondary1;
+                    }
+                }
+
+
+                &.k-state-expanded {
+                    .k {
+                        &-link {
+                            cursor: pointer;
+                            background-color: $c-comp1;
+                            color: $c-primary3;
+
+                            &:hover {
+                                background-color: $c-comp1;
+                                color: $c-primary1;
+                            }
+
+                            &.k-selected {
+                                background-color: $c-secondary1;
+                                color: $c-primary1;
+
+                                &:hover {
+                                    background-color: $c-secondary1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            > .k-item {
+                border-top: calcrem(1) solid $c-grey-2;
+
+                &:first-child {
+                    border-top: 0;
+                }
+            }
+
+            > .k-item[aria-expanded="true"] {
+
+                > .k-link {
+                    color: $c-primary1;
+
+                    .k-icon {
+                        color: $c-primary1;
+                    }
+                }
+            }
+
+            &-toggle {
+
+                &.k-i-arrow-chevron-up {
+                    &::before {
+                        font-family: 'perseo-icons' !important;
+                        content: '\e947';
+                    }
+                }
+
+                &.k-i-arrow-chevron-down {
+                    &::before {
+                        font-family: 'perseo-icons' !important;
+                        content: '\e944';
+                    }
+                }
+            }
+        }
+
+
+        &-group {
+
+            > .k-item {
+
+                > .k-link {
+                    text-transform: initial;
+
+                    &.k-state-selected {
+
+                        &:hover {
+                            background-color: $c-secondary1;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-item,
+        &-link {
+            cursor: pointer;
+        }
+
+        &-animation {
+            &-container {
+                border-radius: 0;
+            }
+        }
+    }
+
+    &.collapsed {
+        .k {
+            &-panelbar {
+                &-item {
+                    > .k-link {
+                        .k-icon:not(.k-i- ) {
+                            display: none;
+                        }
+                    }
+                }
+
+                &-item {
+                    &-text {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

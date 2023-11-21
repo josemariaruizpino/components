@@ -1,0 +1,21 @@
+﻿.c-dropdown {
+
+    &--not-arrow {
+        .k-menu.k-menu-horizontal:not(.k-context-menu) {
+            padding: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .k-menu:not(.k-context-menu) {
+            background: transparent;
+        }
+
+        .k-icon {
+            display: none;
+        }
+    }
+
+    
+}

@@ -1,0 +1,149 @@
+﻿
+$coma: ",";
+$direction: 180deg;
+
+@function create-gradient($scale, $active: false) {
+  $grad: ();
+
+  @each $color, $value in $scale {
+    $grad: append($grad, $color $value);
+  }
+
+  @if $active {
+    $grad: linear-gradient($direction, $grad);
+  }
+
+  @return $grad;
+}
+
+// GRADIENT_PRIMARY
+$scale-primary: (
+  #3B81BA: 0%#{$coma},
+  #5D99CA: 16.08%#{$coma},
+  #68A4D4: 40.8%#{$coma},
+  #3176AE: 65.71%#{$coma},
+  #265C87: 100%
+);
+
+$deg-primary: create-gradient($scale-primary, true);
+
+// Active
+$scale-primary-act: ( 
+    #344859 : 0%#{$coma},
+    #4E687E : 16.08%#{$coma},
+    #597891 : 40.8%#{$coma},
+    #3C5367 : 65.71%#{$coma},
+    #263440 : 100% 
+);
+
+$deg-primary-act: create-gradient($scale-primary-act, true);
+
+// GRADIENT_SECONDARY
+$scale-secondary: (
+  #EBEBEB: 0%#{$coma},
+  #F4F4F4: 16.08%#{$coma},
+  #FAFAFA: 40.8%#{$coma},
+  #E5E4E4: 65.71%#{$coma},
+  #C3C3C3: 100%
+);
+
+$deg-secondary: create-gradient($scale-secondary, true);
+
+// Active
+$scale-secondary-act: (
+    #E0EDFF : 0%#{$coma},
+    #EBF3FF : 16.08%#{$coma},
+    #F5F9FF : 40.8%#{$coma},
+    #E3EFFF: 65.71%#{$coma},
+    #CCE0FF : 100% 
+);
+
+$deg-secondary-act: create-gradient($scale-secondary-act, true);
+
+// GRADIENT_CANCEL
+$scale-cancel: (
+  #DD2419: 0%#{$coma},
+  #EB5147: 16.08%#{$coma},
+  #EF746C: 40.8%#{$coma},
+  #E72E23: 65.71%#{$coma},
+  #B81E14: 100%
+);
+
+$deg-cancel: create-gradient($scale-cancel, true);
+
+// Active
+$scale-cancel-act: (
+    #710F0A : 0%#{$coma},
+    #871812 : 16.08%#{$coma},
+    #A5241D : 40.8%#{$coma},
+    #7A110B: 65.71%#{$coma},
+    #540B07 : 100% 
+);
+
+$deg-cancel-act: create-gradient($scale-cancel-act, true);
+
+// GRADIENT_CLOSE
+$scale-close: (
+  #464E58: 0%#{$coma},
+  #56606C: 16.08%#{$coma},
+  #636F7D: 40.8%#{$coma},
+  #4D5661: 65.71%#{$coma},
+  #3B414A: 100%
+);
+
+$deg-close: create-gradient($scale-close, true);
+
+// Active
+$scale-close-act: ( 
+    #3C3F42 : 0%#{$coma}, 
+    #53575B : 16.08%#{$coma}, 
+    #575C60 : 40.8%#{$coma}, 
+    #3F4245: 65.71%#{$coma}, 
+    #35383B : 100% 
+);
+
+$deg-close-act: create-gradient($scale-close-act, true);
+
+// GRADIENT_SAVE
+$scale-save: (
+  #D57C15: 0%#{$coma},
+  #E98C20: 16.08%#{$coma},
+  #EC9A3C: 40.8%#{$coma},
+  #E88717: 65.71%#{$coma},
+  #BA6C12: 100%
+);
+
+$deg-save: create-gradient($scale-save, true);
+
+// Active
+$scale-save-act: ( 
+    #74440C : 0%#{$coma},
+    #94570F : 16.08%#{$coma},
+    #A66211 : 40.8%#{$coma},
+    #814C0D: 65.71%#{$coma},
+    #6A3E0B : 100% 
+);
+
+$deg-save-act: create-gradient($scale-save-act, true);
+
+// GRADIENT_ACCEPT
+$scale-accept: (
+  #268245: 0%#{$coma},
+  #2D9A52: 16.08%#{$coma},
+  #32AA5A: 40.8%#{$coma},
+  #268246: 65.71%#{$coma},
+  #206F3B: 100%
+);
+
+$deg-accept: create-gradient($scale-accept, true);
+
+// Active
+$scale-accept-act: ( 
+    #183F2B : 0%#{$coma},
+    #22593C : 16.08%#{$coma},
+    #2A6F4C : 40.8%#{$coma},
+    #1C4A32: 65.71%#{$coma},
+    #173B28 : 100% 
+);
+
+$deg-accept-act: create-gradient($scale-accept-act, true);

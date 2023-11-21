@@ -1,0 +1,56 @@
+﻿// Colors
+
+@mixin color-modifiers {
+    @each $name, $hex in $colors {
+        &-#{$name} {
+            color: $hex;
+        }
+    }
+}
+
+.u-color {
+    @include color-modifiers();
+}
+
+// Backgrounds
+
+@mixin bg-modifiers {
+    @each $name, $hex in $colors {
+        &-#{$name} {
+            background-color: $hex;
+        }
+    }
+}
+
+.u-bg {
+    @include bg-modifiers();
+}
+
+// Shadows
+
+@mixin shadow-modifiers {
+    @each $name, $rgba in $shadows {
+        &-#{$name} {
+            box-shadow: $rgba;
+        }
+    }
+}
+
+.u-shadow {
+    @include shadow-modifiers();
+}
+
+// Background Site Utilitie
+
+.u-bgsite {
+    // Background por defecto
+    --bg-site-color: #{$c-comp1};
+    background-color: var(--bg-site-color);
+
+    &:has(#opt) {
+        --bg-site-color: #{$c-white};
+        .c-section {
+            --bg-section: #{$c-comp1};
+        }
+    }
+}

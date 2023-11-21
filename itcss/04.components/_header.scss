@@ -1,0 +1,10 @@
+﻿.c-header {
+    background-color: $c-comp4;
+    padding: calcrem(4) calcrem(14);
+
+    &__menubtn {
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+    }
+}

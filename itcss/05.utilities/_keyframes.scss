@@ -1,0 +1,11 @@
+﻿// ANIMACIONES
+
+@keyframes push-down {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: fit-content;
+    }
+}

@@ -1,0 +1,73 @@
+﻿.c-progress
+{
+   /*--linear-grad: linear-gradient(90deg, #436187, #0D70F2);*/
+   --color-bar: #{$c-accent};
+
+   $self: &;
+
+   .k
+   {
+      &-progress
+      {
+         &-status
+         {
+            /*color: $c-white;*/
+
+            &__wrap
+            {
+               grid-row: none;
+            }
+
+            &-wrap.k-progress-end
+            {
+              
+            }
+         }
+
+         &bar
+         {
+            background-color: $c-white;
+            border: calcrem(1) solid $c-secondary3;
+            border-radius: calcrem(2);
+            height: calcrem(26);
+
+            &-horizontal
+            {
+               width: 100%;
+               height: calcrem(26);
+            }
+         }
+
+            &bar .k-selected
+            {
+               background: var(--color-bar);
+               border-radius: 0 calcrem(2) calcrem(2) 0;
+
+               > .k-progress-status-wrap
+               {
+                 
+
+                  .k-progress-status
+                  {
+                     p
+                     {
+                        color: white;
+                     }
+                  }
+               }
+            }
+      }
+   }
+
+   &.completed
+   {
+      /*--linear-grad: linear-gradient(89.21deg, #436187 -0.96%, rgba(13, 112, 242, 0.94) 40.87%, #E22014 102%);*/
+      --color-bar: #{$c-success};
+   }
+
+   &.low
+   {
+      /*--linear-grad: linear-gradient(89.21deg, #436187 -0.96%, rgba(13, 112, 242, 0.94) 40.87%, #E22014 102%);*/
+      --color-bar: #{$c-danger};
+   }
+}

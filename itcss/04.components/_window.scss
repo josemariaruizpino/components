@@ -1,0 +1,76 @@
+﻿//V.2.0.0
+//Window
+$window-shadow: map-get($shadows, "low");
+
+.k-overlay
+{
+   background-color: $c-primary3;
+}
+
+.c-window
+{
+   --padding-content: 0;
+   --border-windowtitle: transparent;
+
+   &.k, .k
+   {
+      &-window
+      {
+         border: 0;
+         box-shadow: $window-shadow;
+         //botones con acción de ventana de telerik si lo usamos en el window.razor
+
+         &-actions
+         {
+            border-width: 0;
+            padding: calcrem(16);
+         }
+         //clases de window title que genera telerik
+
+         &-titlebar
+         {
+            border-color: var(--border-windowtitle);
+            margin-top: 0rem;
+            padding: 0rem;
+
+            &-actions
+            {
+               margin-right: calcrem(8);
+            }
+         }
+
+         &-title
+         {
+            align-items: center;
+            justify-content: flex-start;
+         }
+         //clases de window content que genera telerik
+
+         &-content
+         {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 0;
+            padding-bottom: 0;
+         }
+      }
+   }
+
+   &__titleText
+   {
+      white-space: initial;
+      overflow: hidden;
+      text-overflow: ellipsis;
+   }
+   // MODS:
+   //Custom prop Right
+   &--right
+   {
+      &.k-window
+      {
+         right: 0;
+      }
+   }
+   //Modal del componente buscador: c-window--taken
+}

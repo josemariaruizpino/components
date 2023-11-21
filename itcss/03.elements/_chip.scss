@@ -1,0 +1,50 @@
+﻿
+.e-chip {
+    // Custom props:
+    --bg-color: #{$c-white};
+    --bd-color: #{$c-secondary3};
+    --txt-color: #{$c-primary1};
+    background-color: var(--bg-color);
+    border: calcrem(1) solid;
+    border-color: var(--bd-color);
+    border-radius: calcrem(25);
+    padding: calcrem(2) calcrem(4);
+    width: fit-content;
+
+    span,
+    p {
+        color: var(--txt-color);
+        font-size: calcrem(14);
+        font-weight: 500;
+    }
+
+    .icon {
+        color: var(--col-text);
+        font-size: calcrem(16);
+    }
+
+    &:has(.icon) {
+        @include flex-align(center, space-between);
+        gap: calcrem(4);
+        cursor: pointer;
+    }
+
+    &--ellips {
+        @include ellipsis-word(100px);
+    }
+
+    &:hover {
+        --bd-color: #{$c-primary1};
+    }
+
+    &.active,
+    &:active {
+        --bg-color: #{$c-secondary1};
+    }
+
+    &.disabled {
+        --bd-color: #{$c-disabled2};
+        --txt-color: #{$c-disabled2};
+        cursor: not-allowed;
+    }
+}

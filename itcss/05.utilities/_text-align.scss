@@ -1,0 +1,15 @@
+﻿// TEXT ALIGN UTILITY
+
+@mixin text-align() {
+    $text-align-list: map-values($text-align-map);
+
+    @each $value in $text-align-list {
+        .u-text-#{$value} {
+            text-align: $value;
+
+            @include sufixes(text-align, $value);
+        }
+    }
+}
+
+@include text-align();

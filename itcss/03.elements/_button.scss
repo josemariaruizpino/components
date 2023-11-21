@@ -1,0 +1,411 @@
+﻿
+.e-btn
+{
+   --bd-color: transparent;
+   --bg-color: transparent;
+   --bd-rad: #{calcrem(4)};
+   --txt-color: #{$c-primary1};
+   --fw-btn: 600;
+   appearance: none;
+   background-color: var(--bg-color) !important;
+   background: var(--bg-color);
+   border: calcrem(1) solid;
+   border-color: var(--bd-color) !important;
+   border-radius: var(--bd-rad);
+   color: var(--txt-color);
+   padding: calcrem(8) calcrem(8); //cambio para DS produccion
+
+   .k-button
+   {
+
+      &-text
+      {
+         align-items: center;
+         display: flex;
+         font-weight: var(--fw-btn);
+         overflow: hidden;
+
+         *
+         {
+            color: var(--txt-color);
+         }
+      }
+   }
+   // Custom degrade buttons
+   &.degrade
+   {
+      --fw-btn: 700;
+      border-style: outset;
+   }
+   // Types
+   // Primary
+   &--primary
+   {
+      @extend .e-btn;
+      --bg-color: #{$c-primary1};
+      --bd-color: #{$c-primary1};
+      --txt-color: #{$c-white};
+
+      &:hover
+      {
+         --bg-color: #{$c-hover1};
+         --txt-color: #{$c-white};
+      }
+
+      &:disabled
+      {
+         --bg-color: #{$c-disabled1};
+         --bd-color: #{$c-disabled1};
+         --txt-color: #{$c-white};
+      }
+
+      &.active,
+      &:active
+      {
+         --bg-color: #{$c-selected1};
+      }
+
+      &.degrade
+      {
+         --bg-color: #{$deg-primary};
+         --txt-color: #{$c-white};
+         border: 0 !important;
+
+         &.active,
+         &:active
+         {
+            --bg-color: #{$deg-primary-act};
+            --txt-color: #{$c-white};
+         }
+      }
+   }
+   // Secondary
+   &--secondary
+   {
+      @extend .e-btn;
+      --bg-color: #{$c-white};
+      --bd-color: #{$c-secondary3};
+      --txt-color: #{$c-primary3};
+      border: calcrem(1) solid !important;
+      border-color: var(--bd-color) !important;
+      border-radius: calcrem(4) !important;
+
+      &:hover
+      {
+         --bg-color: #{$c-white};
+         --bd-color: #{$c-hover2};
+         --txt-color: #{$c-primary3};
+      }
+
+      &:disabled
+      {
+         --bg-color: #{$c-white};
+         --bd-color: #{$c-disabled2};
+         --txt-color: #{$c-disabled2};
+      }
+
+      &.active,
+      &:active
+      {
+         --bg-color: #{$c-secondary1};
+         --bd-color: #{$c-primary1};
+         --txt-color: #{$c-primary1};
+      }
+
+      &.degrade
+      {
+         --bg-color: #{$deg-secondary};
+         --txt-color: #{$c-primary3};
+         border: 0 !important;
+
+         &.active,
+         &:active
+         {
+            --bg-color: #{$deg-secondary-act};
+            --txt-color: #{$c-primary1};
+         }
+      }
+   }
+   // Cancel
+   &--cancel
+   {
+      @extend .e-btn;
+      --bg-color: #{$c-danger};
+      --bd-color: #{$c-danger};
+      --txt-color: #{$c-white};
+
+      &:hover
+      {
+         --bg-color: #{$c-danger-hover};
+         --bd-color: #{$c-danger-hover};
+         --txt-color: #{$c-white};
+      }
+
+      &:active,
+      &.active
+      {
+         --bg-color: #{$c-danger-sel};
+         --bd-color: #{$c-danger-sel};
+         --txt-color: #{$c-white};
+      }
+
+      &:disabled,
+      &.disabled
+      {
+         --bg-color: #{$c-danger-dis};
+         --bd-color: #{$c-danger-dis};
+         --txt-color: #{$c-white};
+      }
+
+      &.degrade
+      {
+         --bg-color: #{$deg-cancel};
+         --txt-color: #{$c-white};
+         border: 0 !important;
+
+         &.active,
+         &:active
+         {
+            --bg-color: #{$deg-cancel-act};
+            --txt-color: #{$c-white};
+         }
+      }
+   }
+   // Close
+   &--close
+   {
+      @extend .e-btn;
+      --bg-color: #{$c-primary2};
+      --bd-color: #{$c-primary2};
+      --txt-color: #{$c-white};
+
+      &:hover
+      {
+         --bg-color: #{$c-hover2};
+         --bd-color: #{$c-hover2};
+         --txt-color: #{$c-white};
+      }
+
+      &:active,
+      &.active
+      {
+         --bg-color: #{$c-selected2};
+         --bd-color: #{$c-selected2};
+         --txt-color: #{$c-white};
+      }
+
+      &:disabled,
+      &.disabled
+      {
+         --bg-color: #{$c-disabled2};
+         --bd-color: #{$c-disabled2};
+         --txt-color: #{$c-white};
+      }
+
+      &.degrade
+      {
+         --bg-color: #{$deg-close};
+         --txt-color: #{$c-white};
+         border: 0 !important;
+
+         &.active,
+         &:active
+         {
+            --bg-color: #{$deg-close-act};
+            --txt-color: #{$c-white};
+         }
+      }
+   }
+   // Save, notice (Guardar)
+   &--save
+   {
+      @extend .e-btn;
+      --bg-color: #{$c-notice};
+      --bd-color: #{$c-notice};
+      --txt-color: #{$c-white};
+
+      &:hover
+      {
+         --bg-color: #{$c-notice-hover};
+         --bd-color: #{$c-notice-hover};
+         --txt-color: #{$c-white};
+      }
+
+      &:active,
+      &.active
+      {
+         --bg-color: #{$c-notice-sel};
+         --bd-color: #{$c-notice-sel};
+         --txt-color: #{$c-white};
+      }
+
+      &:disabled
+      {
+         --bg-color: #{$c-notice-dis};
+         --bd-color: #{$c-notice-dis};
+         --txt-color: #{$c-white};
+      }
+
+      &.degrade
+      {
+         --bg-color: #{$deg-save};
+         --txt-color: #{$c-white};
+         border: 0 !important;
+
+         &.active,
+         &:active
+         {
+            --bg-color: #{$deg-save-act};
+            --txt-color: #{$c-white};
+         }
+      }
+   }
+   // Accept (Aceptar)
+   &--accept
+   {
+      @extend .e-btn;
+      --bg-color: #{$c-success};
+      --bd-color: #{$c-success};
+      --txt-color: #{$c-white};
+
+      &:hover
+      {
+         --bg-color: #{$c-success-hover};
+         --bd-color: #{$c-success-hover};
+         --txt-color: #{$c-white};
+      }
+
+      &:active,
+      &.active
+      {
+         --bg-color: #{$c-success-sel};
+         --bd-color: #{$c-success-sel};
+         --txt-color: #{$c-white};
+      }
+
+      &:disabled,
+      &.disabled
+      {
+         --bg-color: #{$c-success-dis};
+         --bd-color: #{$c-success-dis};
+         --txt-color: #{$c-white};
+      }
+
+      &.degrade
+      {
+         --bg-color: #{$deg-accept};
+         --txt-color: #{$c-white};
+         border: 0 !important;
+
+         &.active,
+         &:active
+         {
+            --bg-color: #{$deg-accept-act};
+            --txt-color: #{$c-white};
+         }
+      }
+   }
+
+   &--mini
+   {
+      @extend .e-btn;
+      padding: calcrem(6);
+      --bg-color: #{$c-white};
+      --bd-color: #{$c-secondary3};
+      --bd-rad:#{calcrem(2)};
+      --txt-color: #{$c-primary3};
+
+      &:hover
+      {
+         --bg-color: #{$c-white};
+         --bd-color: #{$c-hover2};
+         --txt-color: #{$c-primary2};
+      }
+
+      &:active,
+      &.active
+      {
+         --bg-color: #{$c-secondary1};
+         --bd-color: #{$c-primary1};
+         --txt-color: #{$c-primary1};
+      }
+
+      &:disabled,
+      &.disabled
+      {
+         --bg-color: #{$c-white};
+         --bd-color: #{$c-disabled2};
+         --txt-color: #{$c-disabled2};
+      }
+   }
+
+   &--text-btn
+   {
+      @extend .e-btn;
+      --bg-color: transparent;
+      --bd-color: #{$c-secondary3};
+      --txt-color: #{$c-primary3};
+      border: 0;
+      border-bottom: calcrem(1) solid;
+      border-radius: 0;
+
+      &:hover
+      {
+         --bg-color: transparent;
+         --bd-color: #{$c-hover2};
+         --txt-color: #{$c-hover2};
+      }
+
+      &:active,
+      &.active
+      {
+         --bg-color: transparent;
+         --bd-color: #{$c-primary1};
+         --txt-color: #{$c-primary1};
+      }
+
+      &:disabled,
+      &.disabled
+      {
+         --bg-color: transparent;
+         --bd-color: #{$c-disabled2};
+         --txt-color: #{$c-disabled2};
+      }
+   }
+   // Tipo filter
+   // Se usa dentro de las header sections
+   &--filter
+   {
+      @extend .e-btn;
+      --bg-color: transparent;
+      --bd-color: #{$c-secondary3};
+      --txt-color: #{$c-primary2};
+      border: 0;
+      border-inline: calcrem(1) solid var(--bd-color) !important;
+      border-radius: 0;
+      margin-left: -1px;
+
+      &:hover
+      {
+         --bg-color: transparent;
+         --bd-color: #{$c-primary1};
+         --txt-color: #{$c-primary1};
+      }
+
+      &:active,
+      &.active
+      {
+         --bg-color: transparent;
+         --txt-color: #{$c-selected1};
+         --bd-color: #{$c-selected1};
+      }
+
+      &:disabled,
+      &.disabled
+      {
+         --bg-color: transparent;
+         --bd-color: #{$c-secondary3};
+         --txt-color: #{$c-disabled2};
+      }
+   }
+}

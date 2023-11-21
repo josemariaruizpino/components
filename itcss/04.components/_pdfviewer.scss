@@ -1,0 +1,61 @@
+﻿
+.c-pdfviewer {
+    &.k-pdf-viewer {
+        border-radius: calcrem(6);
+
+        .k-toolbar {
+            background-color: $c-white;
+
+            .k-input {
+                margin-left: calcrem(8);
+            }
+        }
+
+        .k-pager-input {
+            color: $c-primary2;
+        }
+
+        .k-pager .k-pager-numbers-wrap {
+            border: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .k-button {
+                border: 0;
+            }
+        }
+    }
+
+    .k-button-solid-base {
+        background-color: $c-white;
+
+        &.k-selected {
+            border-color: $c-secondary1;
+            background-color: $c-secondary1;
+
+            .k-button-icon {
+                color: $c-primary1;
+            }
+        }
+
+        &.k-disabled {
+            background-color: $c-comp3;
+        }
+    }
+    //MIRAR!! Son el border radius del zoom
+    /* .k-button-group .k-button:not(:first-child):not(:last-child) {
+        border-start-end-radius: calcrem(6);
+        border-end-end-radius: calcrem(6);
+    }*/
+    //ICONOS
+    .k-svg-icon {
+        color: $c-primary2;
+        font-size: calcrem(20);
+
+        &.k-icon-xxxl {
+            font-size: calcrem(52);
+        }
+    }
+}

@@ -1,0 +1,37 @@
+﻿/* TABSTRIP DE TELERIK */
+
+.c-tabstrip {
+
+    &__header {
+        height: auto;
+        max-width: calcrem(100);
+
+        &-img {
+            width: 100%;
+        }
+    }
+
+    &__content {
+        border: calcrem(1) solid red; // puede ser dinámico inyectando clases/styles en HTML
+        border-bottom-left-radius: calcrem(2);
+        border-bottom-right-radius: calcrem(2);
+        padding: calcrem(16);
+    }
+    /* PISANDO ESTILOS */
+    .k-tabstrip-items-wrapper .k-item:focus,
+    .k-tabstrip-items-wrapper .k-item.k-state-focused,
+    .k-tabstrip-items-wrapper .k-item.k-focus {
+        box-shadow: none;
+    }
+
+    .k-tabstrip-content {
+        border: none;
+        padding: 0;
+    }
+
+    &.k-tabstrip-top {
+        > .k-tabstrip-items-wrapper {
+            border-bottom-width: 0px;
+        }
+    }
+}

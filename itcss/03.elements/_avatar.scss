@@ -1,0 +1,25 @@
+﻿.e-avatar {
+    @include setWidthAndHeight(34px, 34px);
+    border-radius: calcrem(4);
+    overflow: hidden;
+
+    p {
+        text-transform: uppercase;
+    }
+
+    img {
+        @include setWidthAndHeight();
+    }
+
+    @include xs-pda-device {
+        @include setWidthAndHeight(24px, 24px);
+    }
+    /* Mods */
+    &--medium {
+        @include setWidthAndHeight(26px, 26px);
+    }
+
+    &--small {
+        @include setWidthAndHeight(20px, 20px);
+    }
+}

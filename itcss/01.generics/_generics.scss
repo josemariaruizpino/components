@@ -1,0 +1,48 @@
+
+:root {
+    --bs-body-font-family: $font-family!important;
+}
+
+body {
+  font-family: $font-family!important;
+  letter-spacing: 0.8px;
+  overflow: hidden;
+
+  table,
+  div,
+  p,
+  span,
+  label,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  button,
+  textarea {
+    font-family: $font-family!important;
+    font-size: $font-size-main;
+    letter-spacing: 0.2px;
+    line-height: 1;
+  }
+
+  h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+  }
+
+
+  a {
+    &:hover {
+      color: $c-primary1;
+    }
+  }
+
+  p,
+  input,
+  textarea,
+  li,
+  div {
+      color: $c-primary3
+  }
+}

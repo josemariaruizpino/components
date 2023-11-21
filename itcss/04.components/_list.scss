@@ -1,0 +1,33 @@
+﻿// Mapa de tamaños para la lista
+$map-size: ( xs: 90, sm: 120, md: 140, lg: 160, xl: 210, );
+
+.c-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    // Size
+    $size-list: map-keys($map-size);
+
+    @each $value in $size-list {
+        $res: map-get($map-size, $value);
+
+        &--#{$value} {
+            width: calcrem($res);
+        }
+    }
+
+    &--horizontal {
+        flex-direction: initial;
+    }
+
+    &__item {
+        border-radius: calcrem(4);
+        cursor: pointer;
+        color: $c-primary2;
+        padding: calcrem(8) calcrem(6);
+
+        &:hover { 
+            background-color: rgba($c-grey-4, 0.1);
+        }
+    }
+}

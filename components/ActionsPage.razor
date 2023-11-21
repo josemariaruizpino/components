@@ -1,0 +1,91 @@
+﻿@using Telerik.Blazor.Components
+@inherits ComponentBase<ActionsPage>
+
+<div class="c-section p-flexcb">
+
+    <div class="c-action">
+        @foreach(var group in ActionGroups)
+        {    
+        <div class="c-action__group">
+                <div class="@(Collapse ? "u-ds-none" : "c-action__hd")">
+                <p class="u-fs-12">
+                    @group.Title
+                </p>
+            </div>
+                <div class="c-action__bd @(Collapse ? "u-my-2" : "")">
+                @foreach(var item in group.ActionItems)
+                {    
+                <div class="c-action__item @(Collapse ? "collapsed u-m-0" : "") @(item.ItemActive ? "select" : "") @(item.ItemDissabled ? "disabled" : "")"
+                             name="action-item"
+                    @onclick="@(async () => await item.OnClick.InvokeAsync(item))"
+                             id="@item.ItemName">
+                            <div class="p-flexcc"> 
+                                <i class="@item.ItemIcon"></i>
+                                @if (item.SubAction)
+                                {
+                                    <i class="c-action__item-subicon icon-arrow-down-grid"></i>
+                                }
+                            </div>
+                            <p class="u-fs-12">@item.ItemName</p>
+
+                </div>
+
+                        @if (item.SubAction)
+                        {
+                            
+                            <TelerikTooltip ShowOn="TooltipShowEvent.Click"
+                                            TargetSelector="@('#' + item.ItemName.ToString())"
+                                            Class="e-tooltip__subaction"
+                            >
+                                <Template>
+
+                                        <div class="c-action">
+                                        @foreach (var subgroup in item.SubActionGroup)
+                                        {
+                                        <div class="c-action__group">
+                                            <div class="c-action__hd">
+                                                    <p>@subgroup.SubActionGroupTitle</p>
+                                            </div>
+ 
+                                                <div class="c-action__bd">
+                                                    @foreach (var item in subgroup.SubActionItems)
+                                                    {
+                                                        <div class="c-action__item" @onclick="@(async () => await item.OnClick.InvokeAsync(item))">
+                                                        <i class="@item.SubItemIcon"></i>
+                                                        <p class="u-fs-12">
+                                                           @item.SubItemName 
+                                                        </p>
+                                                    </div>
+                                            }
+                                                </div>
+                                        </div>
+                                    }
+                                    </div>
+                                </Template>
+                            </TelerikTooltip>
+                        }
+                }
+
+            </div>
+        </div>
+        }
+    </div>
+    <div class="c-action">
+        <TelerikButton Class="c-action__buttoncollapse u-me-4" OnClick="ActionCollapse">
+            <i class="@(Collapse ? "icon-double-arrow-up" : "icon-Double-arrow-down")"></i>
+        </TelerikButton>
+    </div>
+</div>
+
+@code {
+    //Parametros para datos para ActionList
+    [Parameter]
+    public List<ActionsPage> ActionsList { get; set; }
+
+    public bool Collapse { get; set; } = false;
+
+    public void ActionCollapse()
+    {
+        Collapse = !Collapse;
+    }
+}

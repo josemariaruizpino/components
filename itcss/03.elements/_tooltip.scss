@@ -1,0 +1,30 @@
+﻿.e-tooltip {
+
+    .k-tooltip {
+        background-color: $c-primary3;
+        border-color: $c-primary3;
+    }
+
+    .k-callout {
+        color: $c-primary3;
+    }
+    //tooltip TK 4.0.1
+
+    .k-tooltip-content {
+        color: $c-white;
+    }
+
+    &__dropdown {
+        // top: calcrem(138.984) !important;
+
+        .k-tooltip {
+            background-color: $c-white;
+            border-color: $c-primary3;
+            padding: 0;
+        }
+
+        .k-callout {
+            display: none;
+        }
+    }
+}

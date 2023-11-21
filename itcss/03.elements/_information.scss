@@ -1,0 +1,157 @@
+﻿
+.e-information {
+
+
+    &__label {
+        > label {
+            font-size: var(--font-size);
+            --font-size: calcrem(16);
+            font-weight: 600;
+        }
+    }
+
+    &__wrap { 
+        > p {
+            align-items: center;
+            --bg-color: #{$c-comp4};
+            background-color: var(--bg-color);
+            border-radius: calcrem(2);
+            color: $c-white;
+            display: flex;
+            font-size: calcrem(28);
+            font-weight: 600;
+            justify-content: center;
+            min-height: calcrem(40);
+            padding: calcrem(8);
+            width: 100%;
+        }
+
+        &.disabled {
+            > p {
+                --bg-color: #{$c-comp3};
+            }
+        }
+
+        &.transparent {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            > p {
+                --bg-color: transparent;
+                color: #{$c-comp4};
+                padding: 0;
+                justify-content: start;
+                font-size: calcrem(24);
+                min-height: calcrem(36);
+            }
+
+            > i {
+                font-size: calcrem(28);
+                color: black;
+            }
+        }
+
+
+    }
+
+    & .ko {
+        > p {
+            --bg-color: #{$c-disabled-error};
+        }
+
+        &.disabled {
+            > p {
+                --bg-color: #{$c-pastel13};
+            }
+        }
+
+        &.transparent {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            > p {
+                --bg-color: transparent;
+                color: #{$c-disabled-error};
+                padding: 0;
+                justify-content: start;
+                font-size: calcrem(24);
+                min-height: calcrem(36);
+            }
+
+            > i {
+                font-size: calcrem(28);
+                color: black;
+            }
+        }
+    }
+
+    & .ok {
+        > p {
+            --bg-color: #{$c-success-dis};
+        }
+
+        &.disabled {
+            > p {
+                --bg-color: #{$c-pastel11};
+            }
+        }
+
+        &.transparent {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            > p {
+                --bg-color: transparent;
+                color: #{$c-success-dis};
+                padding: 0;
+                justify-content: start;
+                font-size: calcrem(24);
+                min-height: calcrem(36);
+            }
+
+            > i {
+                font-size: calcrem(28);
+                color: black;
+            }
+        }
+    }
+
+    & .info {
+        > p {
+            --bg-color: #{$c-notice};
+        }
+
+        &.disabled {
+            > p {
+                --bg-color: #{$c-pastel3};
+            }
+        }
+
+        &.transparent {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            > p {
+                --bg-color: transparent;
+                color: #{$c-notice};
+                padding: 0;
+                justify-content: start;
+                font-size: calcrem(24);
+                min-height: calcrem(36);
+            }
+
+            > i {
+                font-size: calcrem(28);
+                color: black;
+            }
+        }
+    }
+}

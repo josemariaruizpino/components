@@ -1,0 +1,196 @@
+﻿
+
+@use "sass:math";
+@use '../00.settings/_variables.scss' as v;
+
+@function calcrem($size) {
+    $rem-size: math.div($size, 16) + rem;
+    @return $rem-size;
+}
+
+@mixin setWidthAndHeight($width: 100%, $height: 100%) {
+    width: $width;
+    height: $height;
+    min-height: $height;
+}
+
+@mixin full-width {
+    width: 100%;
+}
+
+@mixin flex-align($align: center, $justify: center) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin center-contents($align: center, $justify: center) {
+    display: flex;
+    align-content: $align;
+    justify-content: $justify;
+}
+// para scroll gutter
+@mixin scroll-gutter {
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    @include app-scroll;
+
+    @supports (scrollbar-gutter: stable) {
+        overflow-y: auto;
+        scrollbar-gutter: stable;
+    }
+}
+// mergear arrays
+@function map-collect($maps...) {
+    $collection: ();
+
+    @each $map in $maps {
+        $collection: map-merge($collection, $map);
+    }
+
+    @return $collection;
+}
+
+//Sufixes function
+
+@mixin sufixes($property, $res) {
+    &\@xxl {
+        @include xxl-device {
+            #{$property}: $res !important;
+        }
+    }
+
+    &\@xl {
+        @include xl-device {
+            #{$property}: $res !important;
+        }
+    }
+
+    &\@lg {
+        @include lg-device {
+            #{$property}: $res !important;
+        }
+    }
+
+    &\@md {
+        @include md-device {
+            #{$property}: $res !important;
+        }
+    }
+
+    &\@xs {
+        @include xs-device {
+            #{$property}: $res !important;
+        }
+    }
+
+    &\@pda {
+        @include xs-pda-device {
+            #{$property}: $res !important;
+        }
+    }
+}
+
+@mixin ellipsis-text {
+    display: -webkit-box;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+@mixin ellipsis-word($width) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: #{$width};
+}
+
+$size-scrollbar: calcrem(6);
+
+@mixin app-scroll {
+    &::-webkit-scrollbar {
+        width: $size-scrollbar;
+        height: calcrem(8);
+    }
+
+    &::-webkit-scrollbar-button {
+        width: 0px;
+        height: 0px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: v.$c-grey-4;
+        border-radius: calcrem(50);
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: v.$c-grey-9;
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+        background: v.$c-grey-7;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: v.$c-grey-2;
+        border: 0px none v.$c-grey-2;
+        border-radius: calcrem(89);
+    }
+
+    &::-webkit-scrollbar-track:hover {
+        background: v.$c-grey-2;
+    }
+
+    &::-webkit-scrollbar-track:active {
+        background: v.$c-grey-2;
+    }
+
+    &::-webkit-scrollbar-corner {
+        background: transparent;
+    }
+}
+
+@mixin margin-x-zero {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@mixin absolute-full {
+
+    @include setWidthAndHeight(100vw, 100vh);
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+// ANIMATION MIXIN
+@mixin animation( $name, $duration: 0s, $timing: '', $delay: '', $count: '', $direction: '', $fill: '', $state: '') {
+    animation-name: $name;
+    animation-duration: $duration;
+
+    @if $timing != '' {
+        animation-timing-function: $timing;
+    }
+
+    @if $delay != '' {
+        animation-delay: $delay;
+    }
+
+    @if $count != '' {
+        animation-iteration-count: $count;
+    }
+
+    @if $direction != '' {
+        animation-direction: $direction;
+    }
+
+    @if $fill != '' {
+        animation-fill-mode: $fill;
+    }
+
+    @if $state != '' {
+        animation-play-state: $state;
+    }
+}

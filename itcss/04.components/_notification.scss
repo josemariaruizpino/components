@@ -1,0 +1,121 @@
+﻿
+
+
+.e-notification {
+    --bd-color: #{$c-grey-7};
+    --bg-color: transparent;
+    --bd-rad: #{calcrem(4)};
+    --txt-color: #{$c-grey-6};
+    --fw-btn: 600;
+    display: flex;
+    appearance: none;
+    border: calcrem(1) solid;
+    border-color: var(--bd-color);
+    border-radius: var(--bd-rad);
+    width: 100%;
+
+    &__notification {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        &--prepended {
+            --txt-color: #{$c-white};
+            --bg-color: #{$c-grey-6};
+            border-right: calcrem(1) solid var(--bd-color);
+            background-color: var(--bg-color);
+            color: var(--txt-color);
+
+            > i {
+                font-size: 26px;
+                padding: 0 calcrem(10);
+            }
+        }
+    }
+
+    &__text {
+        --bg-color: #{$c-white};
+        flex: 1;
+        padding: calcrem(10);
+        background-color: var(--bg-color);
+        border-radius: var(--bd-rad);
+        color: var(--txt-color);
+        text-align: center;
+    }
+
+    // Error
+    &--error {
+        @extend .e-notification;
+        --bd-color: #{$c-danger};
+        --txt-color: #{$c-danger};
+
+        .e-notification {
+            &__notification {
+                &--prepended {
+                    --bg-color: #{$c-danger};
+                }
+            }
+        }
+    }
+
+    // Warning
+    &--warning {
+        @extend .e-notification;
+        --bd-color: #{$c-warning};
+        --txt-color: #{$c-warning};
+
+        .e-notification {
+            &__notification {
+                &--prepended {
+                    --bg-color: #{$c-warning};
+                }
+            }
+        }
+    }
+
+    // Success
+    &--success {
+        @extend .e-notification;
+        --bd-color: #{$c-success};
+        --txt-color: #{$c-success};
+
+        .e-notification {
+            &__notification {
+                &--prepended {
+                    --bg-color: #{$c-success};
+                }
+            }
+        }
+    }
+
+    // Info
+    &--info {
+        @extend .e-notification;
+        --bd-color: #{$c-primary1};
+        --txt-color: #{$c-primary1};
+
+        .e-notification {
+            &__notification {
+                &--prepended {
+                    --bg-color: #{$c-primary1};
+                }
+            }
+        }
+    }
+}
+
+
+/*
+    
+ <div class="e-notification e-notification--error" >
+    <div class="e-notification__notification e-notification__notification--prepended" >
+        <i class="icon-Info-circle" > </i >
+    </div >
+    <div class="e-notification__text" >
+        <h3 class="u-fs-24" > Text message</h3 >
+        <p class="u-ds-none" > Text message</p >
+    </div >
+</div >
+
+*/
+

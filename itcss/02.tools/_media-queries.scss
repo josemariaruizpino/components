@@ -1,0 +1,49 @@
+﻿
+
+@mixin xs-device {
+    @media (max-width: $bp-sm - 1) {
+        @content;
+    }
+}
+
+@mixin xs-pda-device {
+    @media (orientation: landscape) and (max-width: 960px) {
+        @content;
+    }
+}
+
+@mixin md-device {
+    @media (min-width: $bp-sm) and (max-width: $bp-md - 1) {
+        @content;
+    }
+}
+
+@mixin lg-device {
+    @media (min-width: $bp-md) and (max-width: $bp-lg - 1) {
+        @content;
+    }
+}
+
+@mixin xl-device {
+    @media (min-width: $bp-lg) and (max-width: $bp-xxl - 1) {
+        @content;
+    }
+}
+
+@mixin xxl-device {
+    @media (min-width: $bp-xxl) {
+        @content;
+    }
+}
+
+@mixin range-mq ($min, $max) {
+    @media (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin min-width ($width) {
+    @media (min-width: $width) {
+        @content;
+    }
+}

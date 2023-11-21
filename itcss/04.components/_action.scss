@@ -1,0 +1,145 @@
+﻿
+.c-action {
+    $self: &;
+
+    // Variables
+    --bg-item: transparent;
+    --border-color: #{$c-secondary3};
+    --border-rad: 6px;
+    --txt-color: #{$c-primary2};
+    // Styles
+    @include flex-align(center, start);
+
+    &__group {
+        padding: calcrem(6) calcrem(14);
+        width: fit-content;
+    }
+
+    &__hd {
+        @include full-width;
+        padding: calcrem(4) 0;
+        text-align: center;
+
+        > p {
+            font-size: calcrem(12);
+            font-weight: 600;
+            color: var(--txt-color);
+        }
+    }
+
+    &__bd {
+        @include flex-align(center, start);
+        border: calcrem(1) solid var(--border-color);
+        position: relative;
+        width: fit-content;
+        border-radius: var(--border-rad);
+
+        &:has(.select) {
+            --border-color: #{$c-primary1};
+        }
+
+        &.subactions {
+            &:after {
+                font-family: 'icp-icons';
+                content: '\e9c6';
+                font-size: calcrem(8);
+                position: absolute;
+                top: calcrem(16);
+                right: calcrem(12);
+            }
+        }
+    }
+
+    &__item {
+        border-radius: var(--border-rad);
+        background-color: var(--bg-item);
+        cursor: pointer;
+        padding-block: calcrem(4);
+        padding-inline: calcrem(6);
+        text-align: center;
+        margin: calcrem(4) calcrem(6) calcrem(0) calcrem(6);
+        width: calcrem(58);
+
+        [class^="icon-"] {
+            font-size: calcrem(24);
+            color: var(--txt-color);
+        }
+
+        > p {
+            height: calcrem(28);
+            @include flex-align(center, center);
+            font-size: calcrem(10);
+            font-weight: 500;
+            color: var(--txt-color);
+        }
+        // States
+        &:hover {
+            --txt-color: #{$c-hover1};
+        }
+
+        &.select {
+            position: relative;
+
+            &:after {
+                background-color: $c-primary1;
+                border-radius: calcrem(2) calcrem(2) 0 0;
+                content: '';
+                display: block;
+                height: calcrem(2);
+                width: 80%;
+                right: 10%;
+                bottom: 0px;
+                position: absolute;
+            }
+
+            --txt-color: #{$c-hover1};
+        }
+
+        &.disabled {
+            pointer-events: none;
+            opacity: 0.4;
+        }
+    }
+
+    &__end {
+        @include flex-align(center, center);
+        border-left: 1px solid $c-comp2;
+        height: 100%;
+        padding: 0 calcrem(16);
+        position: absolute;
+        right: 0;
+    }
+    // Mods
+    &.collapsed {
+        #{$self}__hd {
+            > p {
+                display: none;
+            }
+        }
+
+        #{$self}__item {
+            > p {
+                display: none;
+            }
+        }
+
+        $h-actions: 300px;
+    }
+
+    &--dropdown {
+        animation: bounce-in-top 0.2s both;
+        background-color: $c-white;
+        border-radius: calcrem(2);
+
+        .k-tooltip {
+            border-color: $c-black;
+            color: $c-primary3;
+            background-color: inherit;
+
+            .k-callout {
+                color: $c-white;
+            }
+        }
+    }
+}
+ 

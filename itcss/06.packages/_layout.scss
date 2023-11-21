@@ -1,0 +1,48 @@
+﻿.o-layout {
+    --section-size: 450px;
+    --layout-height: calc(100vh - #{$h-actions});
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: calc(var(--layout-height) - 58px);
+
+    .c-section {
+        // Height
+        flex-basis: var(--section-size);
+        // Para colapsar la sección
+
+        overflow-y: auto;
+        scrollbar-gutter: stable;
+        @include app-scroll;
+
+        @supports (scrollbar-gutter: stable) {
+            overflow-y: auto;
+            scrollbar-gutter: stable;
+        }
+
+        &.collaps {
+            flex-basis: calcrem(44);
+            overflow-y: hidden;
+
+            .icon-sm-Doble-arrow-up {
+                transform: rotate(180deg)
+            }
+        }
+
+        &:last-child {
+            flex: 1 1 auto;
+            height: initial;
+
+            &.collaps {
+                height: calcrem(44);
+                flex-basis: auto;
+                flex: initial;
+            }
+        }
+    }
+    // Mod
+    &--row {
+        flex-direction: row;
+        height: initial;
+    }
+}

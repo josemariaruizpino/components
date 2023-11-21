@@ -1,0 +1,107 @@
+﻿
+.c-card {
+    // Custom props
+    --padding-content: 0;
+    --padding-foot: #{calcrem(12)};
+    --width-img: 35%;
+    --width-card-opt: 100%; // #{calcrem(262)}
+    --max-width-card-opt: #{calcrem(297)};
+    // Mis estilos
+    &__hd {
+        @include flex-align(center, space-between);
+        @include setWidthAndHeight(100%, auto);
+    }
+    // Suele ir dentro de __hd
+    &__title {
+        @include setWidthAndHeight(100%, auto);
+        @include flex-align(center, center);
+        font-weight: 600;
+    }
+
+    &__foot {
+        @include setWidthAndHeight(100%, auto);
+    }
+    // Telerik estilos
+
+    .k, &.k {
+        &-card {
+            border: calcrem(1) solid $c-secondary3;
+            box-shadow: $shadow-xs;
+
+            &-header {
+                background-color: $c-comp1;
+                border: none;
+                padding: calcrem(12);
+                min-width: max-content;
+            }
+
+            &-title {
+                width: inherit;
+                display: flex;
+                justify-content: center;
+            }
+
+            &-body {
+                padding: var(--padding-content);
+
+                p {
+                    margin: 0;
+                }
+            }
+
+            &-footer {
+                padding: var(--padding-foot);
+                display: flex;
+                border: none;
+            }
+            /*
+         &:hover
+         {
+            border: solid calcrem(1) $c-primary1;
+            box-shadow: $shadow-s;
+
+            .k-card-header
+            {
+               background-color: $c-secondary1;
+
+               .k-card-title, i
+               {
+                  color: $c-primary1;
+               }
+            }
+         }*/
+
+            &:active, &.active {
+                border: solid calcrem(1) $c-primary1;
+                box-shadow: $shadow-xs;
+
+                .k-card-header {
+                    background-color: $c-primary1;
+
+                    .k-card-title, i {
+                        color: $c-white;
+                    }
+                }
+            }
+        }
+
+        &-card-horizontal {
+            width: 100%;
+            box-shadow: $shadow-xs;
+
+            .k-card-image {
+                max-width: var(--width-img);
+            }
+        }
+    }
+
+    &--opt {
+        @extend .c-card;
+        cursor: pointer;
+
+        .k-card {
+            max-width: var(--max-width-card-opt) !important;
+            width: var(--width-card-opt) !important;
+        }
+    }
+}

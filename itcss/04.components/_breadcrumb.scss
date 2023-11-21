@@ -1,0 +1,135 @@
+﻿
+.k
+{
+   &-breadcrumb
+   {
+      background-color: transparent;
+      @include flex-align(center, start);
+
+      &-container
+      {
+         height: calcrem(30);
+      }
+
+      &-link
+      {
+         color: $c-primary3;
+         text-decoration: none;
+         text-transform: capitalize;
+         font-size: calcrem(16);
+         font-weight: 400;
+      }
+
+      &-root
+      {
+         &-link
+         {
+            color: $c-primary1;
+            font-size: calcrem(16);
+            text-decoration: none;
+            text-transform: capitalize;
+            text-overflow: ellipsis;
+            margin-right: calcrem(8);
+            white-space: nowrap;
+         }
+      }
+
+      &-icon
+      {
+         &-link
+         {
+            padding: 0;
+         }
+      }
+
+      &-delimiter-icon
+      {
+         color: $c-primary3;
+         cursor: pointer;
+         font-size: calcrem(16);
+         opacity: 1;
+      }
+
+      &-item
+      {
+         display: flex;
+         padding: 0;
+         flex-direction: row-reverse;
+
+         .k-breadcrumb
+         {
+            &-root-link
+            {
+               padding: 0;
+            }
+
+            &-link
+            {
+               padding: 0;
+
+               &:hover
+               {
+                  color: $c-hover2;
+               }
+            }
+
+            &-icontext-link .k-icon
+            {
+               margin-right: calcrem(12);
+            }
+
+            &-delimiter-icon
+            {
+               margin: 0 calcrem(8);
+               padding-bottom: 0;
+
+               &:hover
+               {
+                  color: $c-hover2;
+               }
+            }
+         }
+      }
+
+      &-last-item
+      {
+         cursor: pointer;
+
+         .k-breadcrumb
+         {
+            &-link
+            {
+               color: $c-primary1 !important;
+            }
+
+            &-delimiter-icon
+            {
+               display: none;
+               cursor: pointer;
+               color: $c-primary1;
+            }
+         }
+      }
+   }
+
+   &--scroll
+   {
+
+      .k-breadcrumb-container
+      {
+         overflow-x: scroll;
+         scrollbar-gutter: stable;
+         max-width: -webkit-fill-available;
+         @include app-scroll;
+
+         @supports (scrollbar-gutter: stable)
+         {
+            overflow-x: scroll;
+            scrollbar-gutter: stable;
+            max-width: -webkit-fill-available;
+         }
+      }
+   }
+}
+
+

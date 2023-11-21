@@ -1,0 +1,52 @@
+﻿/*Animaciones loading*/
+@-webkit-keyframes flip-vertical-right {
+    0% {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+
+    100% {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+}
+
+@keyframes flip-vertical-right {
+    0% {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+
+    100% {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+}
+
+
+.c-load {
+    align-items: center;
+    background: rgba($c-white, 0.6);
+    display: flex;
+    justify-content: center;
+    @include setWidthAndHeight(100%, 100vh);
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    &__loader {
+        position: relative;
+
+        @include xs-device {
+            text-align: center;
+        }
+
+        .animate-load {
+            -webkit-animation: flip-vertical-right 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite;
+            animation: flip-vertical-right 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite;
+            height: auto;
+            margin: 0 auto;
+            width: 6rem;
+        }
+    }
+}

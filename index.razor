@@ -1,0 +1,147 @@
+﻿@page "/actioncomponent"
+
+<ActionsPage ActionGroups="@actionList"/>
+
+@code {
+
+    List<ActionGroup> actionList;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        formMainDataModel = new FormMainDataModel();
+        setGridInfo();
+
+        actionList = new()
+        {
+            new ActionGroup()
+            {
+                Title = "Pedidos",
+                ActionItems = new List<ActionItem>()
+                {
+                    new ActionItem() {
+                        ItemName = "Crear", ItemIcon = "icon-add-circle", OnClick = new EventCallback<ActionItem>(this, (Func<ActionItem, Task>) ((ActionItem item) => OnCrearClickAsync(item))),
+                    },
+
+                    new ActionItem()
+                    {
+                    ItemName = "Buscar",
+                    ItemIcon = "icon-search",
+                    ItemDissabled = false,
+                    OnClick = new EventCallback<ActionItem>(this, (Func<ActionItem, Task>) ((ActionItem item) => OnSearchClickAsync(item)))},
+
+                    new ActionItem() {
+                        ItemName = "Anular", ItemIcon = "icon-close-circle"
+                    },  
+
+                    new ActionItem() {
+                        ItemName = "Bloquear", ItemIcon = "icon-lock"
+                    },
+
+
+                }
+            },
+            new ActionGroup()
+            {
+                Title = "General",
+                ActionItems = new List<ActionItem>()
+                {
+                    new ActionItem() {
+                        ItemName = "Actualizar", ItemIcon = "icon-sync",
+                   },
+                    new ActionItem() { ItemName = "Masivo", ItemIcon = "icon-settings" },
+                }
+            }
+        };
+    }
+
+
+    private async Task OnSearchClickAsync(ActionItem item)
+    {
+        item.ItemActive = !item.ItemActive;
+        _openSearchComponent = true;
+    }
+
+    private async Task OnOtroClickAsync(ActionItem item)
+    {
+        await js.InvokeVoidAsync("alert", "Otros click");
+        item.ItemActive = !item.ItemActive;
+    }
+
+    private async Task OnCrearClickAsync(ActionItem item)
+    {
+        ModalCrear = !ModalCrear;
+    }
+
+    FormMainDataModel? formMainDataModel { get; set; }
+    static List<FormMainDataModel> formMainDataModels = new List<FormMainDataModel>
+   {
+        new FormMainDataModel
+        {
+           Pedcompra = string.Empty,
+           Estado = string.Empty,
+           Pedcliente = string.Empty,
+           Departamento = string.Empty,
+           RefProveedor = string.Empty,
+           Sede = string.Empty,
+           Canalalta = string.Empty,
+           Tipo = string.Empty,
+           Almacen = string.Empty,
+        }
+   };
+
+
+    //Datepicker
+
+    DateTime datePickerValue { get; set; } = DateTime.Now;
+    public DateTime Min = new DateTime(1990, 1, 1, 8, 15, 0);
+    public DateTime Max = new DateTime(2025, 1, 1, 19, 30, 45);
+
+
+    //grid
+
+    public partial class GridInfo
+    {
+        public string? Referencia { get; set; }
+        public string? EAN { get; set; }
+        public string? Descripcion { get; set; }
+        public int? CantEsperada { get; set; }
+        public int? CantRecepcionada { get; set; }
+        public int? CantPendiente { get; set; }
+        public int? CantAnulada { get; set; }
+        public int? CantExcedente { get; set; }
+    }
+
+    private GridInfo[] GridInfoExample;
+
+    public async Task setGridInfo()
+    {
+        GridInfoExample = new GridInfo[]
+        {
+            new GridInfo
+            {
+               Referencia = "MP-10529297prueba",
+               EAN = "4587125prueba",
+               Descripcion = "Descripción del producto",
+               CantEsperada = 20,
+               CantRecepcionada = 10,
+               CantPendiente = 10,
+               CantAnulada = 0,
+               CantExcedente = 0,
+            },
+            new GridInfo
+            {
+               Referencia = "MP-10529297fa",
+               EAN = "4587125",
+               Descripcion = "Descripción del producto",
+               CantEsperada = 20,
+               CantRecepcionada = 10,
+               CantPendiente = 10,
+               CantAnulada = 0,
+               CantExcedente = 0,
+            }
+        };
+    }
+
+ 
+}

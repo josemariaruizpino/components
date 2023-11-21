@@ -1,0 +1,26 @@
+﻿.c-datefilter {
+    .k-daterangepicker {
+        align-items: center;
+
+        &.daterangepicker-no-labels {
+            .k-label {
+                display: none;
+            }
+
+            .k-floating-label-container {
+                padding: 0;
+            }
+        }
+
+        .k-floating-label-container {
+            .k-dateinput {
+                border-radius: 0;
+
+                .k-input-inner {
+                    font-size: calcrem($f-12);
+                    padding: 0 calcrem(4);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,102 @@
+﻿//V: 2.1.2
+//Mod: 10/07/23
+
+.k-pager {
+
+    /* Pager variables */
+    --border-color: #{$c-secondary3};
+    --num-color: #{$c-primary3};
+    --num-active: #{$c-primary1};
+    /* End variables */
+
+    background: $c-white;
+    border-color: var(--border-color);
+    border-width: calcrem(1);
+    padding: calcrem(4) calcrem(8);
+
+    .k-pager-nav,
+    .k-pager-numbers {
+        color: var(--num-color);
+        height: calcrem(22);
+        padding: 0;
+        margin: 0;
+        width: fit-content;
+
+        .k-button {
+            font-size: calcrem(12);
+            font-weight: 500;
+            padding: 0;
+            min-width: calcrem(22);
+            width: calcrem(22);
+
+            &-icon {
+                border: 0;
+                font-size: calcrem(14);
+                color: vat(--num-color);
+            }
+
+            &-flat {
+                border-color: var(--border-color) !important;
+
+                &-primary {
+                    color: inherit;
+                }
+            }
+        }
+
+
+        &-wrap {
+            border: calcrem(1) solid var(--border-color);
+            margin: calcrem(4);
+            border-radius: calcrem(4);
+
+            .k-button {
+                min-width: calcrem(22);
+                border: calcrem(1) solid;
+                border-color: var(--border-color) !important;
+                border-top: 0;
+                border-bottom: 0;
+                border-right: 0;
+
+                &.k-selected {
+                    background-color: $c-secondary1 !important;
+                    border: calcrem(1) solid;
+                    border-color: $c-primary1 !important;
+                    color: var(--num-active);
+                    opacity: 1;
+                }
+            }
+        }
+
+        &-last {
+            border-radius: 0 calcrem(4) calcrem(4) 0;
+            border-left: calcrem(1) solid var(--border-color);
+        }
+    }
+
+
+    .k-dropdownlist {
+        background: $c-white;
+        width: auto;
+
+        .k-input {
+            &-inner {
+                padding: calcrem(5) calcrem(4);
+            }
+        }
+
+        .k-input-value-text,
+        .k-icon {
+            color: $c-primary1;
+            font-size: calcrem(12);
+        }
+
+        .k-button {
+            padding: 0 calcrem(2);
+        }
+
+        ~ span {
+            display: none;
+        }
+    }
+}

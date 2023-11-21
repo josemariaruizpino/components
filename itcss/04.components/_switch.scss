@@ -1,0 +1,71 @@
+﻿
+.c-switch {
+    // Variables
+
+    $switch-size: 30;
+    $bg-color-on: $c-success;
+    $bg-color-off: $c-white;
+
+    // clase hermana
+    &.k {
+        &-switch {
+            &-md {
+                width: calcrem($switch-size);
+
+                &.k-switch {
+                    &-off {
+                        .k {
+                            &-switch {
+                                &-thumb-wrap {
+                                    left: calc(calcrem($switch-size) + calcrem(-21));
+                                }
+
+                                &-track {
+                                    background-color: $bg-color-off;
+                                }
+                            }
+                        }
+                    }
+                    &-on {
+                        .k {
+                            &-switch {
+                                &-thumb-wrap {
+                                    left: calc(calcrem($switch-size) + calcrem(-9));
+                                }
+
+                                &-track {
+                                    background-color: $bg-color-on;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    // clases hijas
+    .k {
+        &-switch {
+
+            &-track {
+                height: calcrem(16);
+                width: calcrem($switch-size);
+            }
+
+            &-thumb {
+                width: calcrem(12);
+                height: calcrem(12);
+            }
+
+
+            &-label {
+                &-on,
+                &-off {
+                    font-size: calcrem(8);
+                }
+            }
+        }
+    }
+}

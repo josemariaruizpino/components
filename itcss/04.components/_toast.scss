@@ -1,0 +1,139 @@
+﻿// TOAST
+
+.c-toast
+{
+   $self: &;
+   margin: calcrem(16);
+   z-index: 10;
+
+   &__head
+   {
+      @include flex-align(center, between);
+      margin-bottom: calcrem(10);
+      position: relative;
+
+      div
+      {
+         > [class*="icon-"]
+         {
+            position: absolute;
+            top: 0;
+            right: -18px;
+         }
+      }
+   }
+   /*&__body {
+    }*/
+   &__controls
+   {
+      margin-top: calcrem(16);
+
+      .e-btn--tertiary
+      {
+         @extend .e-btn--mini;
+      }
+
+   }
+
+   .k-notification
+   {
+      -webkit-box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.56);
+      background-color: $c-white;
+      border: none;
+      border-left: calcrem(5) solid transparent;
+      box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.56);
+      /*padding: calcrem(10) calcrem(10);
+        width: calcrem(282);*/
+      padding: calcrem(17) calcrem(20) calcrem(17) calcrem(10);
+      width: calcrem(306);
+      align-items: inherit;
+
+      > .k-svg-icon
+      {
+         font-size: 20px;
+      }
+
+
+      &-actions
+      {
+         .k-svg-i-x
+         {
+            display: none;
+         }
+      }
+      //Tipos
+      //Info
+      &-info
+      {
+         border-left-color: $c-info;
+
+         .k-svg-icon
+         {
+            &:before
+            {
+               content: '\ea24';
+               color: $c-info;
+            }
+         }
+      }
+
+      &-success
+      {
+         border-left-color: $c-success;
+
+         .k-svg-icon
+         {
+            &:before
+            {
+               content: '\ea2a';
+               color: $c-success;
+            }
+         }
+      }
+
+      &-warning
+      {
+         border-left-color: $c-warning;
+
+         .k-svg-icon
+         {
+            &:before
+            {
+               content: '\e9fc';
+               color: $c-warning;
+            }
+         }
+      }
+
+      &-error
+      {
+         border-left-color: $c-danger;
+
+         .k-svg-icon
+         {
+            &:before
+            {
+               content: '\e9fc';
+               color: $c-danger;
+            }
+         }
+      }
+   }
+   /*.k-notification .k-notification-warning {
+        border-left-color: $c-warning;
+    }*/
+   /*.k-notification-error {
+        border-left-color: $c-danger;
+
+        .k-notification-wrap {
+        }
+    }*/
+}
+
+
+
+
+.k-notification-container
+{
+   margin: 6px 0;
+}

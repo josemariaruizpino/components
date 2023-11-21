@@ -1,0 +1,13 @@
+﻿.c-sidebar {
+    background: $c-white;
+    border-radius: 0 12px 12px 0;
+    height: calc(100vh - 3.8rem);
+    position: fixed;
+    top: 3.5rem;
+    width: 15%;
+
+    @include xs-device {
+        display: none;
+        width: 100%;
+    }
+}

@@ -1,0 +1,26 @@
+﻿html, body {
+    font-family: $font-family!important;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: $c-primary1;
+    text-decoration: none;
+}

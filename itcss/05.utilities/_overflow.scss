@@ -1,0 +1,37 @@
+﻿// Overflow
+// V.1.2
+// Mod: 06/09/22
+
+$overflow-map: ( "hidden" : hidden, "auto" : auto, "visible" : visible, "scroll" : scroll, );
+
+$overflow-list: map-values($overflow-map);
+
+@each $value in $overflow-list {
+    .u-overf-#{$value} {
+        $res: map-get($overflow-map, $value);
+        $property: "overflow";
+        #{$property}: $res;
+
+        @include sufixes($property, $res);
+    }
+}
+
+@each $value in $overflow-list {
+    .u-overx-#{$value} {
+        $res: map-get($overflow-map, $value);
+        $property: "overflow-x";
+        #{$property}: $res;
+
+        @include sufixes($property, $res);
+    }
+}
+
+@each $value in $overflow-list {
+    .u-overy-#{$value} {
+        $res: map-get($overflow-map, $value);
+        $property: "overflow-y";
+        #{$property}: $res;
+
+        @include sufixes($property, $res);
+    }
+}

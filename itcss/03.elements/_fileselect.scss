@@ -1,0 +1,48 @@
+﻿/* TELERIK FILE SELECTOR */
+.e-fileselect {
+    &.k-upload {
+        border-radius: calcrem(4) calcrem(4) 0 0;
+
+        .k-upload-files {
+            .k-file {
+                border-bottom-color: $c-success;
+                border-bottom-style: solid;
+                border-bottom-width: calcrem(2);
+                margin: calcrem(16);
+                padding: 0 0 calcrem(10) 0;
+
+                &:last-child {
+                    border-bottom-width: calcrem(2);
+                }
+
+                &.k-file-invalid {
+                    border-bottom-color: $c-danger;
+                }
+
+                &.k-state-focused {
+                    box-shadow: none;
+                }
+            }
+
+            .k-file-group-wrapper,
+            .k-file-invalid-group-wrapper,
+            .k-multiple-files-group-wrapper,
+            .k-multiple-files-invalid-group-wrapper 
+            {
+                .k-file-group {
+                    font-size: calcrem(24);
+                }
+            }
+        }
+
+        .k-dropzone {
+            .k-button {
+                &.k-upload-button {
+                    color: $c-white;
+                    background-color: $c-primary1;
+                    border-radius: calcrem(4);
+                }
+            }
+        }
+    }
+}

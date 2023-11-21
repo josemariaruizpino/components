@@ -1,0 +1,23 @@
+﻿@mixin supports ($property-dec)
+{
+   // find position of colon in property declaration
+   $colon: str-index($property-dec, ':');
+   // extract the property
+   $property: str-slice($property-dec, 1, $colon - 1);
+   // extract the value
+   $value: str-slice($property-dec, $colon + 1);
+   // trim leading spaces
+   @while (str-slice($value, 1, 1) == ' ')
+   {
+      $value: str-slice($value, 2);
+   }
+   // wrap the property declaration in parens
+   $property-dec: '(' + $property-dec + ')';
+
+   // output the ish
+   @supports #{$property-dec}
+   {
+      #{$property}: #{$value};
+      @content;
+   }
+}

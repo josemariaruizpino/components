@@ -1,0 +1,570 @@
+﻿
+.k-icon, .k-svg-icon
+{
+   font-family: 'icp-icons' !important;
+   font-size: 1rem;
+
+   svg
+   {
+      display: none;
+   }
+
+   &.k-svg-i-window-restore
+   {
+      &:before
+      {
+         content: '\e97e';
+      }
+   }
+
+   &.k-svg-i-window
+   {
+      &:before
+      {
+         content: '\e9d7'
+      }
+   }
+
+   &.k-svg-i-window-minimize
+   {
+      &:before
+      {
+         content: '\ea18';
+      }
+   }
+
+   &.k-svg-i-calendar
+   {
+      &:before
+      {
+         content: '\e910'
+      }
+   }
+
+   &.k-svg-i-filter
+   {
+      &::before
+      {
+         content: '\e9e3';
+      }
+   }
+
+   &.k-svg-i-cancel
+   {
+      &:before
+      {
+         content: '\ea14'
+      }
+   }
+
+   &.k-svg-i-x
+   {
+      &:before
+      {
+         content: '\ea13'
+      }
+   }
+
+
+   &.k-svg-i-x-circle
+   {
+      &:before
+      {
+         content: '\ea14'
+      }
+   }
+
+   &.k-svg-i-save
+   {
+      &:before
+      {
+         content: '\e978'
+      }
+   }
+
+   &.k-svg-i-align-left
+   {
+      &:before
+      {
+         content: '\e962';
+      }
+   }
+
+   &.k-svg-i-align-right
+   {
+      &:before
+      {
+         content: '\e963';
+      }
+   }
+
+   &.k-svg-i-align-center
+   {
+      &:before
+      {
+         content: '\e960';
+      }
+   }
+
+   &.k-svg-i-align-justify
+   {
+      &:before
+      {
+         content: '\e961';
+      }
+   }
+
+   &.k-svg-i-arrow-60-right
+   {
+      &:before
+      {
+         content: '\ea05';
+      }
+   }
+
+   &.k-svg-i-arrow-60-left
+   {
+      &:before
+      {
+         content: '\ea03';
+      }
+   }
+
+   &.k-svg-i-arrow-end-right
+   {
+      &:before
+      {
+         content: '\ea06';
+      }
+   }
+
+   &.k-svg-i-arrow-end-left
+   {
+      &:before
+      {
+         content: '\ea04';
+      }
+   }
+
+
+   &.k-svg-i-bold
+   {
+      &:before
+      {
+         content: '\e964';
+      }
+   }
+
+   &.k-svg-i-chevron-left
+   {
+      &:before
+      {
+         content: '\ea03'
+      }
+   }
+
+   &.k-svg-i-chevron-right
+   {
+      &:before
+      {
+         content: '\ea05'
+      }
+   }
+
+   &.k-svg-i-chevron-down
+   {
+      &:before
+      {
+         content: '\ea02';
+      }
+   }
+
+   &.k-svg-i-chevron-up
+   {
+      &:before
+      {
+         content: '\ea07'
+      }
+   }
+
+   &.k-svg-i-caret-alt-down
+   {
+      &:before
+      {
+         content: '\ea02'
+      }
+   }
+
+
+   &.k-svg-i-image
+   {
+      &:before
+      {
+         content: '\e902'
+      }
+   }
+
+   &.k-svg-i-italic
+   {
+      &:before
+      {
+         content: '\e947'
+      }
+   }
+
+   &.k-svg-i-list-unordered
+   {
+      &:before
+      {
+         content: '\e9a0'
+      }
+   }
+
+   &.k-svg-i-list-ordered
+   {
+      &:before
+      {
+         content: '\e94a'
+      }
+   }
+
+   &.k-svg-i-search
+   {
+      &:before
+      {
+         content: '\e99c'
+      }
+   }
+
+   &.k-svg-i-sort-asc-small
+   {
+      &:before
+      {
+         content: '\e918'
+      }
+   }
+
+   &.k-svg-i-sort-desc-small
+   {
+      &:before
+      {
+         content: '\e915'
+      }
+   }
+
+   &.k-svg-i-strikethrough
+   {
+      &:before
+      {
+         content: '\e966'
+      }
+   }
+
+   &.k-svg-i-clock
+   {
+      &:before
+      {
+         content: '\e948'
+      }
+   }
+
+   &.k-svg-i-caret-alt-left
+   {
+      &:before
+      {
+         content: '\ea03'
+      }
+   }
+
+   &.k-svg-i-caret-alt-to-left
+   {
+      &:before
+      {
+         content: '\ea04'
+      }
+   }
+
+   &.k-svg-i-caret-alt-right
+   {
+      &:before
+      {
+         content: '\ea05'
+      }
+   }
+
+   &.k-svg-i-caret-alt-to-right
+   {
+      &:before
+      {
+         content: '\ea06'
+      }
+   }
+
+   &.k-svg-i-caret-alt-up
+   {
+      &:before
+      {
+         content: '\ea07';
+      }
+   }
+
+   &.k-svg-i-arrow-n
+   {
+      &:before
+      {
+         content: '\e941e';
+      }
+   }
+
+   &.k-svg-i-underline
+   {
+      &:before
+      {
+         content: '\e96f';
+      }
+   }
+
+   .k-svg-i-arrow-60-down
+   {
+      &:before
+      {
+         content: '\e93e';
+      }
+   }
+
+   &.k-svg-i-zoom-out
+   {
+      &:before
+      {
+         content: '\e99d'
+      }
+   }
+
+   &.k-svg-i-zoom-in
+   {
+      &:before
+      {
+         content: '\e99e'
+      }
+   }
+
+   &.k-svg-i-pointer
+   {
+      &:before
+      {
+         content: '\e968'
+      }
+   }
+
+   &.k-svg-i-hand
+   {
+      &:before
+      {
+         content: '\e930'
+      }
+   }
+
+   &.k-svg-i-folder-open
+   {
+      &:before
+      {
+         content: '\e9b9'
+      }
+   }
+
+   &.k-svg-i-download
+   {
+      &:before
+      {
+         content: '\e99b'
+      }
+   }
+
+   &.k-svg-i-print
+   {
+      &:before
+      {
+         content: '\ea59'
+      }
+   }
+
+   &.k-svg-i-arrow-up
+   {
+      &:before
+      {
+         content: '\ea01'
+      }
+   }
+
+   &.k-svg-i-arrow-down
+   {
+      &:before
+      {
+         content: '\e9fe'
+      }
+   }
+
+   &.k-svg-i-caret-alt-to-left
+   {
+      &:before
+      {
+         content: "\ea0a";
+      }
+   }
+
+   &.k-svg-i-caret-alt-to-right
+   {
+      &:before
+      {
+         content: "\ea0b";
+      }
+   }
+
+   &.k-svg-icon.k-svg-i-sort-asc-small
+   {
+      &:before
+      {
+         content: "\ea01";
+      }
+   }
+
+   &.k-svg-icon.k-svg-i-sort-desc-small
+   {
+      &:before
+      {
+         content: "\e9fe";
+      }
+   }
+
+   &.k-svg-icon.k-svg-i-filter
+   {
+      &:before
+      {
+         content: "\ea2d";
+      }
+   }
+
+   &.k-svg-icon.k-svg-i-plus
+   {
+      &:before
+      {
+         content: "\ea14";
+      }
+   }
+}
+   //Pisamos los iconos del Sidebar que vienen del core UI
+
+   .icon-Fast-forward,
+   .icon-sm-Fast-backward
+   {
+      font-style: normal;
+
+      &:before
+      {
+         content: '\ea0a'
+      }
+   }
+
+
+   .icon-Fast-backward,
+   .icon-sm-Fast-forward
+   {
+      font-style: normal;
+
+      &:before
+      {
+         content: '\ea0b'
+      }
+   }
+
+   .icon-More-options
+   {
+      font-style: normal;
+
+      &:before
+      {
+         content: '\e9f9'
+      }
+   }
+
+   .icon-Close1
+   {
+      font-style: normal;
+
+      &:before
+      {
+         content: '\e94c'
+      }
+   }
+
+   .icon-Internet
+   {
+      font-style: normal;
+
+      &:before
+      {
+         content: '\e935'
+      }
+   }
+
+   .icon-Settings1
+   {
+      font-style: normal;
+
+      &:before
+      {
+         content: '\e959'
+      }
+   }
+
+
+   .icon-Logout
+   {
+      font-style: normal;
+
+      &:before
+      {
+         content: '\e9f6'
+      }
+   }
+
+
+   .icon-Chevron-Right
+   {
+      font-style: normal;
+
+      &:before
+      {
+         content: '\ea05'
+      }
+   }
+
+   .icon-Chevron-Left
+   {
+      font-style: normal;
+
+      &:before
+      {
+         content: '\ea03'
+      }
+   }
+
+   .icon-Eye-close
+   {
+      font-style: normal;
+
+      &::before
+      {
+         content: '\e933'
+      }
+   }
+
+   .icon-Eye-open
+   {
+      font-style: normal;
+
+      &::before
+      {
+         content: '\e934'
+      }
+   }

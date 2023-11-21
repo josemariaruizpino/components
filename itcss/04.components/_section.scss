@@ -1,0 +1,176 @@
+﻿//Ds produccion
+//Mod:23/08/2023
+//Celia
+
+.c-section
+{
+   --ctn-state: "block";
+   --icon-collapse: '\ea0c';
+   --color-title: #{$c-primary1};
+   --bg-section: #{$c-white};
+
+   $self: &;
+   background: var(--bg-section);
+   border-radius: calcrem(4);
+   box-shadow: $s-box;
+   min-height: max-content;
+   overflow: hidden;
+   // Nuevo v2 con //cambios para DS Produccion
+   &__hd
+   {
+      border-bottom: calcrem(1) solid $c-grey-3;
+      @include flex-align(center, space-between);
+      padding: calcrem(10) calcrem(12);
+
+      .icon-collaps
+      {
+         font-family: 'icp-icons' !important;
+
+         &:before
+         {
+            content: var(--icon-collapse);
+         }
+      }
+   }
+
+   &__title
+   {
+      @include flex-align(center, space-between);
+      flex-direction: row;
+
+      p
+      {
+         font-weight:600; 
+         color: var(--color-title);
+      }
+
+      i
+      {
+      color: $c-primary1;
+      }
+   }
+
+   &__icon
+   {
+      color: $c-primary2;
+      font-size: calcrem(20);
+      margin-right: calcrem(8);
+   }
+
+   &__opt
+   {
+      @include flex-align(center, end);
+      padding: 0;
+
+      .e-btn .k-button-text
+      {
+         .icon-collaps, .icon-close
+         {
+            --txt-color: #{$c-primary2};
+            color: var(--txt-color);
+            font-size: calcrem(20);
+         }
+      }
+   }
+   //estilos de las subsecciones
+
+   &__subtitle
+   {
+      @include flex-align(center, space-between);
+      flex-direction: row;
+
+      p, i
+      {
+         --color-title: #{$c-primary3};
+         color: var(--color-title);
+      }
+   }
+   // Bloque de acciones de la header section
+   &__act
+   {
+      @include flex-align(center, end);
+   }
+
+   &__ctn
+   {
+      display: var(--ctn-state);
+      // Dinamical classes
+      .expand
+      {
+         animation: push-down;
+      }
+   }
+
+   @include xs-device
+   {
+      border-right: none;
+      padding: 2rem 0;
+   }
+
+   &--auto
+   {
+      min-height: initial;
+   }
+
+   &--full
+   {
+      @include setWidthAndHeight(100%, 95vh);
+   }
+
+   &--gutter
+   {
+      overflow-y: auto;
+      scrollbar-gutter: stable;
+      @include app-scroll;
+
+      @supports (scrollbar-gutter: stable)
+      {
+         overflow-y: auto;
+         scrollbar-gutter: stable;
+      }
+   }
+
+   &--right
+   {
+      border-radius: calcrem(12) 0 0 calcrem(12);
+   }
+
+   &--left
+   {
+      border-radius: 0 calcrem(12) calcrem(12) 0;
+   }
+   /*Actions*/
+   &.collaps
+   {
+      --icon-collapse: '\ea09';
+      --ctn-state: none;
+   }
+
+   &.hidden
+   {
+      #{$self}__ctn
+      {
+         display: none;
+      }
+   }
+}
+
+/* ====== VERSION DS 'OPERATIVA' ====== */
+.c-section-opt {
+    --color-title: #{$c-primary3};
+
+    &__title {
+        @include flex-align(center, space-between);
+        flex-direction: row;
+
+        p {
+            font-weight: 600;
+            color: var(--color-title);
+        }
+
+        i {
+            color: $c-primary3;
+        }
+    }
+}
+/* ====== FIN DE VERSION DS 'OPERATIVA' ====== */

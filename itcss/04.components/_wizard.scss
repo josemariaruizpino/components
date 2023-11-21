@@ -1,0 +1,433 @@
+﻿
+.c-wizard
+{
+   .k-wizard
+   {
+      padding: calcrem(14);
+      height: 85vh;
+      width: 100%;
+
+      .k-wizard-steps
+      {
+         margin-top: 0rem;
+
+         @include lg-device
+         {
+            width: 100%;
+            align-self: center;
+         }
+
+         @include xl-device
+         {
+            width: 90%;
+            align-self: center;
+         }
+
+         @include xxl-device
+         {
+            width: 80%;
+            align-self: center;
+         }
+      }
+
+      .k
+      {
+         &-stepper
+         {
+            .k-step-label,
+            .k-step-indicator
+            {
+               color: $c-disabled1;
+            }
+
+            .k-step-indicator
+            {
+               background: $c-disabled1;
+               border-color: $c-disabled1;
+               color: $c-white;
+            }
+
+            .k-step-done
+            {
+               .k-step-indicator
+               {
+                  background: $c-primary1;
+                  border-color: $c-primary1;
+                  color: $c-white;
+               }
+
+               .k-step-label
+               {
+                  color: $c-primary2;
+               }
+            }
+
+            .k-step-current
+            {
+               .k-step-indicator
+               {
+                  background: $c-primary1;
+                  border: solid 2px $c-comp1;
+                  color: $c-white;
+               }
+
+               .k-step-label
+               {
+                  color: $c-primary1;
+                  font-weight: normal;
+               }
+            }
+
+            .k-step-text
+            {
+               font-size: calcrem(12);
+
+               @include lg-device
+               {
+                  font-size: calcrem(14);
+                  font-weight: 500;
+               }
+
+               @include xl-device
+               {
+                  font-size: calcrem(14);
+                  font-weight: 600;
+               }
+
+               @include xxl-device
+               {
+                  font-size: calcrem(16);
+                  font-weight: 700;
+               }
+            }
+         }
+
+         &-progressbar
+         {
+            background: $c-disabled1;
+
+            .k-selected
+            {
+               background: $c-primary1;
+            }
+         }
+      }
+
+      &-buttons
+      {
+
+         &-right
+         {
+            width: 100%;
+            /*padding-bottom: calcrem(10);*/
+            display: flex;
+            justify-content: space-between;
+
+
+
+            @include xl-device
+            {
+               justify-content: space-evenly;
+            }
+
+            .k-button
+            {
+               width: 45%;
+
+               @include lg-device
+               {
+                  width: 35%
+               }
+
+               @include xl-device
+               {
+                  width: 30%
+               }
+
+               @include xxl-device
+               {
+                  width: 25%
+               }
+            }
+         }
+      }
+
+      &-content
+      {
+         overflow-x: hidden;
+      }
+
+      .k-form .k-label
+      {
+         font-weight: 500;
+         font-size: calcrem(14);
+      }
+
+
+      .k-input-md .k-input-button
+      {
+         background: transparent;
+         border: none;
+         color: $c-primary2;
+      }
+
+      .k-button-text
+      {
+         gap: 1rem;
+      }
+
+      .k-disabled
+      {
+         .k-input-solid
+         {
+            background-color: $c-comp3;
+         }
+      }
+   }
+
+   .k-step-list-horizontal ~ .k-progressbar
+   {
+      @include xl-device
+      {
+         height: 6px;
+         top: calc(((28px + 6 * 6px) / 6) + 6px / 2);
+      }
+
+      @include xxl-device
+      {
+         height: 8px;
+         top: calc(((28px + 8 * 8px) / 8) + 8px / 8);
+      }
+   }
+
+   &--modal
+   {
+
+      &.k, .k
+      {
+
+         &-wizard
+         {
+            height: 93vh;
+            display: flex !important;
+            padding: 0;
+            align-items: flex-start;
+
+            .k
+            {
+               &-stepper
+               {
+                  display: flex !important;
+                  grid-template-columns: none !important;
+                  align-items: center;
+                  margin: 0 !important;
+                  padding: 0 calcrem(8);
+
+
+                  .k-step
+                  {
+                     width: auto !important;
+
+                     &-list
+                     {
+                        &-horizontal
+                        {
+                           flex-direction: row;
+
+                           .k-step-link
+                           {
+                              align-items: center;
+                              flex-direction: row-reverse;
+                              justify-content: left;
+                              margin: 0 !important;
+                              max-width: fit-content;
+
+                              .k-step-label
+                              {
+                                 margin: 0;
+                              }
+
+                              .k-step-indicator
+                              {
+                                 color: $c-selected1;
+                                 background-color: transparent !important;
+                                 border: none !important;
+                                 margin: 0;
+                              }
+                           }
+                        }
+                     }
+                  }
+
+                  .k-step-first
+                  {
+                     color: $c-selected1;
+
+                     .k-step-link
+                     {
+                        .k-step-indicator
+                        {
+                           color: $c-selected1;
+                        }
+                     }
+
+                     &.k-step-done
+                     {
+                        color: $c-primary1;
+
+                        .k-step-indicator
+                        {
+                           color: $c-primary1;
+                        }
+                     }
+                  }
+
+                  .k-step-last
+                  {
+                     color: transparent;
+
+                     .k-step-link
+                     {
+                        .k-step-indicator
+                        {
+                           color: transparent;
+                        }
+                     }
+
+
+                     &.k-step-current
+                     {
+                        color: $c-selected1;
+
+                        .k-step-indicator
+                        {
+                           color: $c-selected1;
+                        }
+                     }
+                  }
+
+                  .k-step-text
+                  {
+                     font-size: calcrem(16);
+                     font-weight: 400;
+                     max-width: fit-content;
+                     margin: 0 calcrem(4);
+
+                     @include lg-device
+                     {
+                        font-size: calcrem(14);
+                        font-weight: 500;
+                     }
+
+                     @include xl-device
+                     {
+                        font-size: calcrem(14);
+                        font-weight: 600;
+                     }
+
+                     @include xxl-device
+                     {
+                        font-size: calcrem(16);
+                        font-weight: 700;
+                     }
+                  }
+               }
+
+               &-progressbar
+               {
+                  display: none;
+
+                  .k-selected
+                  {
+                     background: transparent;
+                  }
+               }
+            }
+
+            &-steps
+            {
+               margin-top: 0;
+               width: 100%;
+            }
+
+            &-buttons
+            {
+               width: 100%;
+               margin-top: calcrem(14);
+
+               &-right
+               {
+                  width: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-end;
+
+
+
+                  @include xl-device
+                  {
+                     justify-content: space-evenly;
+                  }
+
+                  .k-button
+                  {
+                     width: fit-content;
+
+                  }
+               }
+
+               &-left
+               {
+                  width: 100%;
+                  /*padding-bottom: calcrem(10);*/
+                  display: flex;
+                  /*justify-content: space-between;*/
+               }
+            }
+
+            &-content
+            {
+               overflow-x: hidden;
+            }
+
+            .k-form .k-label
+            {
+               font-weight: 500;
+               font-size: calcrem(14);
+            }
+
+
+            .k-input-md .k-input-button
+            {
+               background: transparent;
+               border: none;
+               color: $c-primary2;
+            }
+
+
+            .k-disabled
+            {
+               .k-input-solid
+               {
+                  background-color: $c-comp3;
+               }
+            }
+         }
+
+         .k-step-list-horizontal ~ .k-progressbar
+         {
+            @include xl-device
+            {
+               height: 6px;
+               top: calc(((28px + 6 * 6px) / 6) + 6px / 2);
+            }
+
+            @include xxl-device
+            {
+               height: 8px;
+               top: calc(((28px + 8 * 8px) / 8) + 8px / 8);
+            }
+         }
+      }
+   }
+}
